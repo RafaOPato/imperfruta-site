@@ -361,9 +361,7 @@ h1{
         animation: none;
     }
 }
-<<<<<<< HEAD
 
-=======
 header {
     display: flex;
     align-items: center;
@@ -407,4 +405,4 @@ body {
 .hero p {
     color: #2B1E14;
 }
->>>>>>> 3b852934de4862851bf0ef331e79181e6438d2a1
+
