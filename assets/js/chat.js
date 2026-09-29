@@ -17,7 +17,7 @@ const SABER = [
         diz: "É o pulo do gato. O comprador paga antes e o dinheiro fica guardado. O motorista chega no sítio com um <b>código de retirada</b>; você confere a carga, digita o código no app e o Pix é liberado na hora. Se ele não aparecer ou você recusar, o valor volta pro comprador e a fruta continua sua."
     },
     {
-        chaves: ["quando recebo", "prazo", "pagamento", "pix", "receber", "dinheiro", "pago"],
+        chaves: ["quando recebo", "recebo", "prazo", "pagamento", "pix", "receber", "dinheiro", "pago"],
         diz: "Na hora da retirada. Você digita o código que o motorista mostra e o Pix cai na sua conta no mesmo minuto, sem boleto de 30 dias, sem desconto depois."
     },
     {
@@ -239,6 +239,7 @@ function manda(pergunta) {
         pensando.remove();
         fala(resposta.diz, "ele", resposta.botao);
         mostraSugestoes(resposta.sugere || SUGESTOES_PADRAO);
+        conversa.scrollTop = conversa.scrollHeight;     // desce de novo, porque as sugestões ocupam espaço
     }, espera);
 }
 
