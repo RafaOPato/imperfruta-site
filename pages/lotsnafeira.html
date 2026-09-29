@@ -1,12 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lotes na feira - ImperFruta</title>
     <link rel="stylesheet" href="../assets/css/lotsnafreira.css">
 </head>
+
 <body>
-    
+    <header>
+        <a class="logo" href="../index.html">
+            <img src="../assets/images/manga.svg" alt="logo da manguinha">
+            imper<span>fruta</span>
+        </a>
+
+        <nav>
+            <a class="ativo" href="lotsnafeira.html">Lotes na feira</a>
+            <a href="meuspedidos.html">Meus pedidos</a>
+            <a href="#">Alertas</a>
+            <a href="../index.html">Como funciona</a>
+        </nav>
+
+        <div class="perfil">
+            <img src="../assets/images/notificacaoanunciolote.png" alt="notificações">
+            <span class="avatar">PR</span>
+            <p>
+                <b>Polpas Rio Pardo</b>
+                <small>Ribeirão Preto, SP</small>
+            </p>
+        </div>
+    </header>
+
+    <section class="topo">
+        <div>
+            <h1>Lotes na feira</h1>
+            <p>47 lotes de 9 estados. 18 combinam com os seus filtros.</p>
+        </div>
+
+        <div class="busca">
+            <input class="campo" type="search" placeholder="Buscar fruta, cidade ou produtor" aria-label="Buscar">
+            <select class="campo" aria-label="Ordem dos lotes">
+                <option>Mais perto de você</option>
+                <option>Menor preço</option>
+                <option>Maior quantidade</option>
+            </select>
+        </div>
+    </section>
+
+    <div class="conteudo">
+
+        <aside>
+            <h2>Fruta</h2>
+            <div class="chips">
+                <span class="chip escolhido">Laranja <small>18</small></span>
+                <span class="chip escolhido">Manga <small>7</small></span>
+                <span class="chip escolhido">Mamão <small>6</small></span>
+                <span class="chip escolhido">Maracujá <small>4</small></span>
+                <span class="chip">Caju <small>5</small></span>
+                <span class="chip">Goiaba <small>5</small></span>
+                <span class="chip">Acerola <small>3</small></span>
+                <span class="chip">Limão <small>2</small></span>
+            </div>
+
+            <h2>Região</h2>
+            <select class="campo" aria-label="Região">
+                <option>SP, MG e ES</option>
+                <option>Só São Paulo</option>
+                <option>Brasil inteiro</option>
+            </select>
+            <input class="distancia" type="range" min="0" max="800" value="450" aria-label="Distância em quilômetros">
+            <p class="legenda"><b>até 450 km</b> de Ribeirão Preto</p>
+
+            <h2>Quantidade e preço</h2>
+            <div class="dois-campos">
+                <label>
+                    Mínimo (kg)
+                    <input class="campo" type="text" value="1.000">
+                </label>
+                <label>
+                    Pago até (R$/kg)
+                    <input class="campo" type="text" value="3,00">
+                </label>
+            </div>
+
+            <h2>Defeito que você aceita</h2>
+            <label class="marcar"><input type="checkbox" checked> Mancha na casca <small>31</small></label>
+            <label class="marcar"><input type="checkbox" checked> Tamanho fora do padrão <small>22</small></label>
+            <label class="marcar"><input type="checkbox" checked> Formato irregular <small>12</small></label>
+            <label class="marcar"><input type="checkbox"> Maturação avançada <small>9</small></label>
+            <label class="marcar"><input type="checkbox"> Amassado leve <small>6</small></label>
+
+            <h2>Retirar até</h2>
+            <input class="campo" type="date" value="2026-09-20" aria-label="Retirar até">
+        </aside>
+
+        <main>
+            <div class="escolhidos">
+                <span>Laranja ×</span>
+                <span>Manga ×</span>
+                <span>Mamão ×</span>
+                <span>Maracujá ×</span>
+                <span>Até 450 km ×</span>
+                <span>Mínimo 1.000 kg ×</span>
+                <a href="#">Limpar</a>
+                <p><b>18 lotes</b> encontrados</p>
+            </div>
+
+            <div class="lotes">
+
+                <article class="lote">
+                    <img src="../assets/images/fotofeiralaranjapera.jpg" alt="Laranjas com folhas">
+                    <span class="desconto">-34%</span>
+                    <div class="lote-texto">
+                        <h3>Laranja pera</h3>
+                        <p class="defeito">Manchas de ferrugem na casca</p>
+                        <p class="dado">8.400 kg disponíveis</p>
+                        <p class="dado">Bebedouro, SP, a 112 km</p>
+                        <div class="lote-pe">
+                            <div>
+                                <p class="preco">R$ 0,78 <small>/kg</small></p>
+                                <p class="mercado">mercado <s>R$ 1,18</s></p>
+                            </div>
+                            <p class="prazo com-folga">até 19/09</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lote">
+                    <img src="../assets/images/fotofeiramangatommy.jpg" alt="Mangas em uma caixa">
+                    <span class="desconto">-35%</span>
+                    <div class="lote-texto">
+                        <h3>Manga Tommy</h3>
+                        <p class="defeito">Tamanho fora do padrão</p>
+                        <p class="dado">3.200 kg disponíveis</p>
+                        <p class="dado">Monte Alto, SP, a 96 km</p>
+                        <div class="lote-pe">
+                            <div>
+                                <p class="preco">R$ 1,10 <small>/kg</small></p>
+                                <p class="mercado">mercado <s>R$ 1,70</s></p>
+                            </div>
+                            <p class="prazo">até 17/09</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lote">
+                    <img src="../assets/images/fotofeiramamaoformosa.jpg" alt="Mamão com manchas pretas na casca">
+                    <span class="desconto">-39%</span>
+                    <div class="lote-texto">
+                        <h3>Mamão formosa</h3>
+                        <p class="defeito">Mancha preta na casca</p>
+                        <p class="dado">2.100 kg disponíveis</p>
+                        <p class="dado">Pirangi, SP, a 71 km</p>
+                        <div class="lote-pe">
+                            <div>
+                                <p class="preco">R$ 0,85 <small>/kg</small></p>
+                                <p class="mercado">mercado <s>R$ 1,40</s></p>
+                            </div>
+                            <p class="prazo">até 18/09</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lote">
+                    <img src="../assets/images/fotofeiramaracujaazedo.jpg" alt="Maracujá com a casca enrugada">
+                    <span class="desconto">-34%</span>
+                    <div class="lote-texto">
+                        <h3>Maracujá azedo</h3>
+                        <p class="defeito">Casca enrugada, polpa inteira</p>
+                        <p class="dado">1.300 kg disponíveis</p>
+                        <p class="dado">Araguari, MG, a 268 km</p>
+                        <div class="lote-pe">
+                            <div>
+                                <p class="preco">R$ 2,90 <small>/kg</small></p>
+                                <p class="mercado">mercado <s>R$ 4,40</s></p>
+                            </div>
+                            <p class="prazo">até 16/09</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lote">
+                    <img src="../assets/images/fotofeiralaranjavalencia.jpg" alt="Laranjas no pé">
+                    <span class="desconto">-36%</span>
+                    <div class="lote-texto">
+                        <h3>Laranja valência</h3>
+                        <p class="defeito">Calibre miúdo</p>
+                        <p class="dado">12.000 kg disponíveis</p>
+                        <p class="dado">Mogi Guaçu, SP, a 190 km</p>
+                        <div class="lote-pe">
+                            <div>
+                                <p class="preco">R$ 0,70 <small>/kg</small></p>
+                                <p class="mercado">mercado <s>R$ 1,10</s></p>
+                            </div>
+                            <p class="prazo com-folga">até 22/09</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lote">
+                    <img src="../assets/images/fotofeiramangapalmer.jpg" alt="Mangas verdes no pé">
+                    <span class="desconto">-34%</span>
+                    <div class="lote-texto">
+                        <h3>Manga Palmer</h3>
+                        <p class="defeito">Leve amassado e mancha de látex</p>
+                        <p class="dado">1.400 kg disponíveis</p>
+                        <p class="dado">Taquaritinga, SP, a 76 km</p>
+                        <div class="lote-pe">
+                            <div>
+                                <p class="preco">R$ 1,25 <small>/kg</small></p>
+                                <p class="mercado">mercado <s>R$ 1,90</s></p>
+                            </div>
+                            <p class="prazo">até 16/09</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="mostrar-mais">
+                <a href="#">Mostrar mais 12 lotes</a>
+            </p>
+        </main>
+
+    </div>
+
+    <script src="../assets/js/chat.js" defer></script>
+
 </body>
+
 </html>
