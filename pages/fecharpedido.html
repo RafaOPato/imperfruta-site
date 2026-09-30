@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fechar pedido - ImperFruta</title>
+    <link rel="stylesheet" href="../assets/css/fecharpedido.css">
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="../index.html">
+            <img src="../assets/images/manga.svg" alt="logo da manguinha">
+            imper<span>fruta</span>
+        </a>
+
+        <nav>
+            <a class="ativo" href="lotsnafeira.html">Lotes na feira</a>
+            <a href="meuspedidos.html">Meus pedidos</a>
+            <a href="#">Alertas</a>
+            <a href="../index.html">Como funciona</a>
+        </nav>
+
+        <div class="perfil">
+            <img src="../assets/images/notificacaoanunciolote.png" alt="notificações">
+            <span class="avatar">PR</span>
+            <p>
+                <b>Polpas Rio Pardo</b>
+                <small>Ribeirão Preto, SP</small>
+            </p>
+        </div>
+    </header>
+
+    <a class="voltar" href="lotsnafeira.html">← Voltar para o lote</a>
+
+    <section class="topo">
+        <h1>Fechar pedido</h1>
+        <p>Confira antes de pagar. O produtor tem até 24 horas para aceitar.</p>
+    </section>
+
+    <div class="conteudo">
+
+        <main>
+
+            <section class="bloco">
+                <h2>Quanto você leva</h2>
+
+                <div class="lote">
+                    <img src="../assets/images/fotofecharpedidolaranja.jpg" alt="Laranjas do lote">
+                    <div>
+                        <b>Laranja pera com manchas de ferrugem</b>
+                        <span>Lote 0412, Sítio Três Irmãs, Bebedouro SP</span>
+                    </div>
+                    <span class="placa">R$ 0,78 <small>/kg</small></span>
+                </div>
+
+                <div class="quantidade">
+                    <button type="button">−</button>
+                    <b>3.000 <small>kg</small></b>
+                    <button type="button">+</button>
+                    <div class="atalhos">
+                        <span class="chip">1.000 kg</span>
+                        <span class="chip escolhido">3.000 kg</span>
+                        <span class="chip">5.000 kg</span>
+                        <span class="chip">Lote todo, 8.400 kg</span>
+                    </div>
+                </div>
+
+                <p class="dica">Mínimo de 1.000 kg, de 500 em 500 kg.</p>
+            </section>
+
+            <section class="bloco">
+                <h2>Quando o caminhão vai buscar</h2>
+
+                <p class="rotulo">Dia da retirada</p>
+                <div class="dias">
+                    <span class="dia"><small>qua</small><b>16</b><em>set</em></span>
+                    <span class="dia escolhido"><small>qui</small><b>17</b><em>set</em></span>
+                    <span class="dia"><small>sex</small><b>18</b><em>set</em></span>
+                    <span class="dia"><small>sáb</small><b>19</b><em>set</em></span>
+                    <span class="dia vencido"><small>dom</small><b>20</b><em>lote vence</em></span>
+                </div>
+
+                <div class="tres-campos">
+                    <label>
+                        Horário de chegada
+                        <select class="campo">
+                            <option>07:00</option>
+                            <option selected>08:00</option>
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>14:00</option>
+                        </select>
+                        <small>O sítio carrega das 7h às 16h.</small>
+                    </label>
+                    <label>
+                        Placa do caminhão
+                        <input class="campo" type="text" value="FTR 2A91">
+                        <small>Dá para mudar até a véspera.</small>
+                    </label>
+                    <label>
+                        Motorista
+                        <input class="campo" type="text" value="Josué Almeida">
+                    </label>
+                </div>
+
+                <p class="aviso">O endereço completo do sítio aparece assim que o produtor aceitar o pedido.</p>
+            </section>
+
+            <section class="bloco">
+                <h2>Como você paga</h2>
+
+                <div class="pagamentos">
+                    <label class="pagamento escolhido">
+                        <input type="radio" name="pagamento" checked>
+                        <b>Pix</b>
+                        <span>Aprovado na hora. O lote fica reservado para você.</span>
+                    </label>
+                    <label class="pagamento">
+                        <input type="radio" name="pagamento">
+                        <b>Boleto</b>
+                        <span>Compensa em até 2 dias úteis. A reserva só vale depois disso.</span>
+                    </label>
+                </div>
+
+                <div class="cofre">
+                    <b>O dinheiro fica guardado com a Imperfruta</b>
+                    <p>O produtor só recebe quando confirma a retirada com o código que o seu motorista mostra no sítio. Se ele recusar ou não entregar, o valor volta para você.</p>
+                </div>
+            </section>
+
+        </main>
+
+        <aside class="resumo">
+            <div class="resumo-topo">
+                <h2>Resumo</h2>
+                <span class="carimbo">Lote 0412</span>
+            </div>
+
+            <div class="resumo-lote">
+                <img src="../assets/images/fotofecharpedidolaranja.jpg" alt="Laranjas do lote">
+                <div>
+                    <b>Laranja pera</b>
+                    <span>Sítio Três Irmãs, Bebedouro SP</span>
+                </div>
+            </div>
+
+            <div class="linhas">
+                <p><span>3.000 kg × R$ 0,78</span> <b>R$ 2.340,00</b></p>
+                <p><span>Taxa da plataforma (6%)</span> <b>R$ 140,40</b></p>
+                <p><span>Frete</span> <b>Por sua conta</b></p>
+                <p><span>Retirada</span> <b>Quinta, 17/09, às 8h</b></p>
+            </div>
+
+            <p class="total"><span>Total</span> <b>R$ 2.480,40</b></p>
+
+            <p class="economia">R$ 1.200 abaixo do preço de mercado</p>
+
+            <a class="pagar" href="acompanharpedido.html">Pagar com Pix</a>
+
+            <p class="miudo">Ao pagar você aceita as regras de compra. Se o produtor não aceitar em 24 horas, o Pix volta na hora.</p>
+        </aside>
+
+    </div>
+
+    <script src="../assets/js/chat.js" defer></script>
+
+</body>
+
+</html>
