@@ -361,3 +361,48 @@ h1{
         animation: none;
     }
 }
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.h1 {
+    color: #1B2E23;
+    display: inline;
+    margin: 0;
+}
+
+.h2 {
+    color: #7F5539;
+    display: inline;
+    margin: 0;
+}
+
+header img {
+    width: 40px;
+    height: 30px;
+}
+
+body {
+    margin: 0;
+    background: #EDE4D3;
+}
+
+.hero h1 {
+    color: #1B2E23;
+}
+
+.hero p {
+    color: #2B1E14;
+}
+
