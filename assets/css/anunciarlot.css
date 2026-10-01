@@ -154,7 +154,10 @@ nav a {
 /* ---------- O QUE JÁ ESTAVA NESTE ARQUIVO ---------- */
 
 h1{
-    text-align: center;
+    color: green;
+    text-decoration: dashed;
+    margin: 30px;
+
 }
 
 
@@ -495,4 +498,56 @@ button {
         transition: none;
         animation: none;
     }
+}
+
+.container {
+    display: flex;
+    gap: 24px;
+}
+
+.conteudo-principal {
+    flex: 1;
+
+}
+
+.resumo {
+    width: 500px;
+}
+
+.inicio {
+    align-items: left;
+    padding: left 200px;
+
+}
+
+.inicio p {
+    margin-top: 30px;
+}
+
+.inicio h1 {
+    padding-left: 0px;
+    margin: 5px;
+    width: 1200px;
+    height: 50px;
+    font-size: 50px;
+    margin-top: 0px;
+
+}
+
+.principal {
+    background-color: white;
+}
+
+.pai-imagens {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    max-height: 60%;
+}
+.imagem-filho {
+    width: 290px;
+    height: 350px;
+    object-fit: cover;
+    flex: none;
+
 }
