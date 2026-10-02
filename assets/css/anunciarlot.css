@@ -500,54 +500,441 @@ button {
     }
 }
 
+
+:root {
+    --verde: #173b26;
+    --verde-escuro: #0f2a1b;
+    --verde-claro: #dfe8d3;
+    --verde-ok: #2f7d3b;
+    --creme: #fffefa;
+    --borda: #dcd9cc;
+    --borda-campo: #cfcbb9;
+    --texto-suave: #4a5a4f;
+    --cinza: #5f6d62;
+    --laranja: #ff6a14;
+    --laranja-claro: #ffdfc9;
+}
+
+
+/* ---------- DUAS COLUNAS: formulário à esquerda, resumo à direita ---------- */
+
 .container {
     display: flex;
-    gap: 24px;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 0 48px 64px;
 }
 
 .conteudo-principal {
     flex: 1;
-
 }
 
 .resumo {
-    width: 500px;
+    width: 330px;
+    padding-top: 160px;
+    text-align: right; /* só para o "Rascunho salvo agora" ir para a direita */
 }
 
-.inicio {
-    align-items: left;
-    padding: left 200px;
 
+/* ---------- TÍTULO DA PÁGINA ---------- */
+
+.inicio {
+    height: 200px;
+    padding-top: 30px;
 }
 
 .inicio p {
-    margin-top: 30px;
+    margin-top: 10px;
+    max-width: 560px;
+    color: var(--texto-suave);
 }
 
 .inicio h1 {
-    padding-left: 0px;
-    margin: 5px;
-    width: 1200px;
-    height: 50px;
-    font-size: 50px;
-    margin-top: 0px;
-
+    width: auto;
+    height: auto;
+    margin: 10px 0;
+    font-size: 52px;
+    color: var(--verde);
 }
+
+
+/* ---------- CARTÕES BRANCOS ---------- */
 
 .principal {
-    background-color: white;
+    background-color: var(--creme);
+    border: 1.5px solid var(--borda);
+    border-radius: 24px;
+    padding: 28px;
+    margin-bottom: 20px;
 }
+
+.principal h2 {
+    font-size: 26px;
+}
+
+.meio p,
+.oq-diferente p {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    color: var(--texto-suave);
+}
+
+
+/* ---------- FOTOS ---------- */
 
 .pai-imagens {
     display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    max-height: 60%;
+    gap: 12px;
 }
-.imagem-filho {
-    width: 290px;
-    height: 350px;
-    object-fit: cover;
-    flex: none;
 
+.imagem-filho {
+    width: 150px;
+    height: 140px;
+}
+
+.imagem-filho img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* A última é o botão "Tirar foto", que já vem com a borda tracejada */
+.imagem-filho:last-child img {
+    object-fit: contain;
+    border-radius: 0;
+}
+
+
+/* ---------- CHIPS (as bolinhas de escolher) ---------- */
+
+.chips-fruta,
+.chips-clasifc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0 24px;
+}
+
+.marcar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid var(--borda-campo);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+/* Esconde a caixinha de marcar: quem aparece é o chip */
+.marcar input {
+    position: absolute;
+    opacity: 0;
+}
+
+.marcar:hover {
+    border-color: var(--verde);
+}
+
+/* Quando a pessoa clica, o chip fica verde-escuro com letra clara */
+.marcar:has(input:checked) {
+    background-color: var(--verde);
+    border-color: var(--verde);
+    color: #f8f7f2;
+}
+
+/* Contorno laranja quando navega com o teclado (Tab) */
+.marcar:has(input:focus-visible) {
+    outline: 3px solid var(--laranja);
+}
+
+/* Desenho de cada fruta (a última, "Outra fruta", fica sem) */
+.chips-fruta .marcar:not(:last-child)::before {
+    content: var(--icone);
+    font-size: 18px;
+    line-height: 1;
+}
+
+.chips-fruta .marcar:nth-child(1) { --icone: "🍊"; }  /* laranja */
+.chips-fruta .marcar:nth-child(2) { --icone: "🍋"; }  /* limão */
+.chips-fruta .marcar:nth-child(3) { --icone: "🥭"; }  /* manga */
+.chips-fruta .marcar:nth-child(4) { --icone: "🍐"; }  /* goiaba */
+.chips-fruta .marcar:nth-child(5) { --icone: "🍈"; }  /* maracujá */
+
+/* Visto (✓) que aparece nos chips de característica quando marcados */
+.chips-clasifc .marcar:has(input:checked)::before {
+    content: "✓";
+    font-weight: bold;
+}
+
+
+/* ---------- CAMPOS ---------- */
+
+.duas-colunas {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+/* Cada metade ocupa o mesmo espaço */
+.duas-colunas > div {
+    flex: 1;
+}
+
+/* Rótulos em cima dos campos */
+.campo label,
+.qnt-qnt label,
+.Preco-kg label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--verde);
+}
+
+.entrada {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    border: 1.5px solid var(--borda-campo);
+    border-radius: 14px;
+    background-color: var(--creme);
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Borda verde com brilho laranja ao clicar no campo */
+.entrada:focus {
+    outline: none;
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(255, 106, 20, 0.3);
+}
+
+/* Quantidade e Preço: a caixa é o .campo, o input fica sem borda dentro */
+.qnt-qnt .campo,
+.Preco-kg .campo {
+    display: flex;
+    align-items: center;
+    height: 52px;
+    padding: 0 16px;
+    border: 1.5px solid var(--borda-campo);
+    border-radius: 14px;
+    background-color: var(--creme);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.qnt-qnt .campo:focus-within,
+.Preco-kg .campo:focus-within {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(255, 106, 20, 0.3);
+}
+
+.qnt-qnt .entrada,
+.Preco-kg .entrada {
+    flex: 1;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+/* Dentro da caixa o brilho já é da caixa, então o input não precisa dele */
+.qnt-qnt .entrada:focus,
+.Preco-kg .entrada:focus {
+    box-shadow: none;
+}
+
+.prefixo,
+.unidade {
+    color: var(--cinza);
+}
+
+.ajuda {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--cinza);
+}
+
+.dica {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background-color: var(--laranja-claro);
+}
+
+.dica-icone {
+    font-size: 20px;
+}
+
+
+/* ---------- COLUNA DA DIREITA ---------- */
+
+/* "Rascunho salvo agora" com o visto ao lado */
+.resumo > img {
+    width: 18px;
+    vertical-align: middle;
+}
+
+.lado-direito {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--verde-ok);
+}
+
+/* Cartão "Como vai aparecer na feira" */
+.meio-direita {
+    text-align: left;
+    padding: 20px;
+    background-color: var(--creme);
+    border: 1.5px solid var(--borda);
+    border-radius: 24px;
+}
+
+.meio-direita span {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+}
+
+.meio-direita img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.meio-direita h2 {
+    margin-top: 16px;
+    font-size: 26px;
+}
+
+/* O segundo h2 é o preço: fonte grande, e o "por quilo" fica ao lado */
+.meio-direita h2:nth-of-type(2) {
+    display: inline-block;
+    font-family: "Big Shoulders Stencil Display", sans-serif;
+    font-size: 48px;
+}
+
+.meio-direita h2:nth-of-type(2) + p {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.meio-direita p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--texto-suave);
+}
+
+/* Botões "Mancha na casca" e "Calibre misto" com o visto na frente */
+.meio-direita button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    margin-right: 6px;
+    padding: 9px 16px;
+    border: 1.5px solid var(--borda-campo);
+    border-radius: 999px;
+    background-color: transparent;
+    font-weight: 600;
+}
+
+.meio-direita button::before {
+    content: "✓";
+}
+
+/* Botão publicar, aviso e caixa do WhatsApp */
+.meio-direita-botao {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.meio-direita-botao button {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 16px;
+    background-color: var(--verde);
+    color: #f8f7f2;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Seta depois do texto "Publicar lote" */
+.meio-direita-botao button::after {
+    content: "  →";
+}
+
+.meio-direita-botao button:hover {
+    background-color: var(--verde-escuro);
+}
+
+.meio-direita-botao p {
+    margin: 16px 8px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--cinza);
+}
+
+/* Caixa verde-clara do WhatsApp */
+.meio-direita-botao section {
+    display: flex;
+    gap: 12px;
+    padding: 16px 18px;
+    border-radius: 20px;
+    background-color: var(--verde-claro);
+}
+
+/* Sem fundo: a imagem aparece do jeito que ela é */
+.whats-foto {
+    width: 34px;
+    height: 34px;
+}
+
+.whats-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* ---------- TELAS PEQUENAS ---------- */
+
+@media (max-width: 860px) {
+
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 16px 96px;
+    }
+
+    .inicio {
+        height: auto;
+    }
+
+    .resumo {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .pai-imagens,
+    .duas-colunas {
+        flex-wrap: wrap;
+    }
+
+    .duas-colunas {
+        flex-direction: column;
+    }
 }
