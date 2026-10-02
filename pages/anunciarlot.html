@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anunciar lote - ImperFruta</title>
-    <link rel="stylesheet" href="../assets/css/anunciarlot.css">
+    <link rel="stylesheet" href="/assets/css/anunciarlot.css">
 </head>
+
 <body>
     <header>
-        <a class="logo" href="../index.html">
-            <img src="../assets/images/manga.svg" alt="logo da manguinha">
+        <a class="logo" href="/index.html">
+            <img src="/assets/images/manga.svg" alt="logo da manguinha">
             imper<span>fruta</span>
         </a>
 
@@ -21,7 +23,7 @@
         </nav>
 
         <div class="perfil">
-            <img src="../assets/images/notificacaoanunciolote.png" alt="notificações">
+            <img src="/assets/images/notificacaoanunciolote.png" alt="notificações">
             <span class="avatar">VS</span>
             <p>
                 <b>Valdir Souza</b>
@@ -30,37 +32,162 @@
         </div>
     </header>
 
-    <section>
-        <div class="inicio">
-            <p>Meus lotes > Anunciar lote</p>
-            <h1>Anunciar lote</h1>]
-            <p>Foto, fruta, quilos e preço. Quem não quer preencher nada manda foto e áudio pelo WhatsApp que a equipe anuncia.</p>
-        </div>
-        <div>
-            <img src="/assets/images/inicioanunciolote.png" alt="Sinal de visto">
-            <span class="lado-direito">Rascunho salvo agora</span>
-        </div>
-    </section>
+    <div class="container">
+          
+    <main class="conteudo-principal">
 
-    <section>
-        <div class="pai-meio">
-            <div class="meio">
-                <h2>Fotos do lote</h2>
-                <p>Mostre a fruta como ela está, com defeito e tudo. Foto do celular mesmo — a indústria quer ver o que vai chegar.</p>
-            </div>
-            <div class="imagens-meio">
+    <div class="inicio">
+        <p>Meus lotesㅤ> ㅤAnunciar lote</p>
+        <h1>Anunciar lote</h1>
+        <p>Foto, fruta, quilos e preço. Quem não quer preencher nada manda foto e áudio pelo WhatsApp que a equipe
+            anuncia.</p>
+    </div>
+
+    <section class="principal">
+        <div class="meio">
+            <h2>Fotos do lote</h2>
+            <p>Mostre a fruta como ela está, com defeito e tudo. Foto do celular mesmo — a indústria quer ver o que vai
+                chegar.</p>
+        </div>
+        <div class="pai-imagens">
+            <div class="imagem-filho">
                 <img src="/assets/images/fotosanunciolotelaranja.png" alt="muitas laranjas para selecionar">
+            </div>
+
+            <div class="imagem-filho">
                 <img src="/assets/images/fotoanunciolotelaranja2.png" alt="laranjas colhidas">
+            </div>
+
+            <div class="imagem-filho">
                 <img src="/assets/images/fotoanunciolotelaranja3.png" alt="laranjas no pé">
+            </div>
+
+            <div class="imagem-filho">
                 <img src="/assets/images/fotoanunciolotetirarfoto.png" alt="adicionar uma foto nova">
             </div>
 
+        </div>
+    </section>
 
+    <section class="principal">
+        <div class="o-que-e">
+            <h2>O que é</h2>
+            <div class="chips-fruta">
+                <label class="marcar"><input type="checkbox">Laranja</label>
+                <label class="marcar"><input type="checkbox">Limão</label>
+                <label class="marcar"><input type="checkbox">Manga</label>
+                <label class="marcar"><input type="checkbox">Goiaba</label>
+                <label class="marcar"><input type="checkbox">Maracujá</label>
+                <label class="marcar"><input type="checkbox">Outra fruta</label>
+            </div>
+
+            <div class="duas-colunas">
+                <div class="campo">
+                    <label for="variedade">Variedade</label>
+                    <input class="entrada" type="text" value="Pera rio">
+                </div>
+                <div class="campo">
+                    <label for="colheita">Colheita</label>
+                    <input class="entrada" type="date" value="2026-09-12">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="principal">
+        <h2>Quanto e por quanto</h2>
+
+        <div class="duas-colunas">
+            <div class="qnt-qnt">
+                <label for="quantidade-dspnvl">Quantidade disponível</label>
+                <div class="campo">
+                    <input class="entrada" id="quantidade-dspnvl" type="text" value="8.400">
+                    <span class="unidade">kg</span>
+                </div>
+                <p class="ajuda">Pode vender em partes. A indústria escolhe quantos quilos leva.</p>
+            </div>
+
+            <div class="Preco-kg">
+                <label for="preco-kg">Preço por quilo</label>
+                <div class="campo">
+                    <span class="prefixo">R$</span>
+                    <input class="entrada" id="preco-kg" type="text" value="0,78">
+                    <span class="unidade">/kg</span>
+                </div>
+                <p class="ajuda">Você recebe esse valor cheio. A taxa é cobrada do comprador.</p>
+            </div>
         </div>
 
+        <div class="dica">
+            <span class="dica-icone">💡</span>
+            <p>
+                Laranja pera na Ceagesp hoje: <strong>R$ 1,18/kg</strong>.
+                Lotes com mancha estão saindo entre <strong>R$ 0,70 e R$ 0,85</strong>.
+                Abaixo disso você está dando a fruta.
+            </p>
+        </div>
     </section>
+
+    <section class="principal">
+        <div class="oq-diferente">
+            <h2>O que tem de diferente</h2>
+            <p>Falar do defeito não espanta comprador: é o que faz o preço fazer sentido para a indústria.</p>
+            <div class="chips-clasifc">
+                <label class="marcar"><input type="checkbox">Mancha na casca</label>
+                <label class="marcar"><input type="checkbox">Calibre misto</label>
+                <label class="marcar"><input type="checkbox">Formato torto</label>
+                <label class="marcar"><input type="checkbox">Amassado</label>
+                <label class="marcar"><input type="checkbox">Maduro demais</label>
+                <label class="marcar"><input type="checkbox">Sobra de classificação</label>
+            </div>
+
+            <div class="duas-colunas">
+                 <div class="campo">
+                    <label for="colheita">Dá pra retirar até</label>
+                    <input class="entrada" type="date" value="2026-09-19">
+                    </div>
+                <div class="campo">
+                    <label for="variedade">Carregamento</label>
+                    <input class="entrada" type="text" value="Caminhão entra no pomar">
+                </div>
+            </div>
+    </section>
+
+    </main>
+
+    <aside class="resumo">
+        <img src="/assets/images/inicioanunciolote.png" alt="Sinal de visto">
+        <span class="lado-direito">Rascunho salvo agora</span>
+        <div class="meio-direita">
+            <span>como vai aparecer na feira</span>
+            <img src="/assets/images/laranjasanunciarlotemeiodireita.png" alt="laranjas pera anunciadas para vender">
+            <h2>Laranja pera</h2>
+            <p>Sítio Três Irmãs · Bebedouro, SP</p>
+            <h2>R$ 0,78</h2>
+            <p>por quilo · 8.400 kg</p>
+            <button>Mancha na casca</button> <button>Calibre misto</button>
+        </div>
+        <div class="meio-direita-botao">
+            <button>Publicar lote</button>
+            <p>Depois de publicado, o lote aparece na feira para as indústrias da região em poucos minutos.</p>
+            <section>
+                <div class="whats-foto">
+                    <img src="" alt="">
+                </div>
+                <div class="whats-texto">
+                    <span>Prefere mandar foto e áudio pelo WhatsApp? <b><u>A gente anuncia pra você</u></b> e te manda o link do lote pronto.</span>
+
+                </div>
+            </section>
+
+
+        </div>
+    </aside>
+
+    </div>
 
     <script src="../assets/js/chat.js" defer></script>
 
 </body>
+
 </html>
