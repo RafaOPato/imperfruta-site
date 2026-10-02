@@ -496,3 +496,36 @@ button {
         animation: none;
     }
 }
+
+.controls {
+    display: flex;          
+    align-items: center;    
+    gap: 16px;
+}
+
+.div-lupa {
+display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    height: 48px;
+    padding: 0 16px;
+    border: 1.5px solid #d6d3c8;
+    border-radius: 16px;
+    background-color: #ffffff;
+}
+
+.Lupa {
+    color: #1b3a2a;
+    font-size: 18px;
+}
+
+.entrada {
+    flex: 1;                
+    border: none;           
+    outline: none;          
+    background: transparent;
+    font-size: 15px;
+    color: #333333;
+}
+

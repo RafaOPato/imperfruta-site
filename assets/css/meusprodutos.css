@@ -497,32 +497,4 @@ button {
     }
 }
 
-.controls {
-    display: flex;          
-    align-items: center;    
-    gap: 8px;               
-    padding: 0 20px;
-    height: 56px;
-    border: 2px solid #d6d3c8;
-    border-radius: 16px;
-}
-
-.entrada {
-    flex: 1;                
-    border: none;           
-    outline: none;          
-    background: transparent;
-
-}
-
-.Lupa {
-    color: #1b3a2a;
-}
-
-
-
-
-
-
-
 
