@@ -153,8 +153,8 @@ nav a {
 
 /* ---------- O QUE JÁ ESTAVA NESTE ARQUIVO ---------- */
 
-h1 {
-    text-align: center;
+h1{
+    text-wrap-style: auto;
 }
 
 
@@ -496,6 +496,7 @@ button {
         animation: none;
     }
 }
+
 
 
 /* ---------- PEDIDO ---------- */
