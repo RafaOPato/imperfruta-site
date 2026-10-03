@@ -498,8 +498,9 @@ button {
 }
 
 .controls {
-    display: flex;          
-    align-items: center;    
+    display: right;          
+    align-items: center;
+    width: 550px;    
     gap: 16px;
 }
 
@@ -516,7 +517,7 @@ display: flex;
 }
 
 .Lupa {
-    color: #1b3a2a;
+    color: #173b26;
     font-size: 18px;
 }
 
@@ -528,4 +529,369 @@ display: flex;
     font-size: 15px;
     color: #333333;
 }
+
+
+.seletora {
+    height: 48px;
+    padding: 0 16px 0 56px;
+    width: 240px;
+    border: 1.5px solid #d6d3c8;
+    border-radius: 16px;
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #333333;
+
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b3a2a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='18' height='16' rx='2'/><line x1='3' y1='10' x2='21' y2='10'/><line x1='8' y1='3' x2='8' y2='7'/><line x1='16' y1='3' x2='16' y2='7'/></svg>");
+    background-repeat: no-repeat;
+    background-position: 16px center;
+    background-size: 20px;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f7f2;
+    color: #444444;
+}
+ 
+
+
+ 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #173b26;
+    text-decoration: none;
+}
+ 
+.logo img {
+    width: 40px;
+}
+ 
+.logo span {
+    color: #ff6a14
+}
+ 
+nav {
+    display: flex;
+    gap: 8px;
+}
+ 
+nav a {
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: #3d5a4a;
+    font-size: 18px;
+    text-decoration: none;
+}
+ 
+nav a:hover {
+    background-color: #e6ede1;
+}
+ 
+nav a.ativo {
+    background-color: #dfe9d6;
+    color: #1b3a2a;
+}
+ 
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+ 
+.perfil img {
+    width: 28px;
+}
+ 
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #fddcc4;
+    color: #1b3a2a;
+    font-weight: bold;
+}
+ 
+.perfil b {
+    display: block;
+    color: #1b3a2a;
+}
+ 
+.perfil small {
+    color: #777777;
+}
+ 
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+    padding: 48px;
+}
+ 
+/* título + busca lado a lado */
+.top-row {
+    display: grid;
+    grid-template-columns: 1fr 600px;
+    align-items: end;
+    margin-bottom: 32px;
+}
+ 
+.top-row h1 {
+    font-size: 72px;
+    color: #1b3a2a;
+}
+ 
+.top-row p {
+    font-size: 20px;
+    color: #555555;
+    margin-top: 16px;
+}
+ 
+/* a busca fica na coluna da direita, ocupando as duas linhas */
+.top-row .controls {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    justify-self: end;
+}
+ 
+/* ===== PARTE QUE VOCÊ JÁ TINHA ===== */
+.controls {
+    display: flex;          
+    align-items: center;    
+    gap: 16px;
+}
+ 
+.div-lupa {
+display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    height: 48px;
+    padding: 0 16px;
+    border: 1.5px solid #d6d3c8;
+    border-radius: 16px;
+    background-color: #ffffff;
+}
+ 
+.Lupa {
+    color: #1b3a2a;
+    font-size: 18px;
+}
+ 
+.entrada {
+    flex: 1;                
+    border: none;           
+    outline: none;          
+    background: transparent;
+    font-size: 15px;
+    color: #333333;
+}
+/* ===== FIM DA PARTE QUE VOCÊ JÁ TINHA ===== */
+ 
+.seletora {
+    height: 48px;
+    padding: 0 16px;
+    border: 1.5px solid #d6d3c8;
+    border-radius: 16px;
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #333333;
+}
+ 
+/* ===== BANNER VERDE ===== */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 48px;
+    margin-bottom: 48px;
+    background-color: #1b3a2a;
+    border-radius: 40px;
+}
+ 
+.stats {
+    display: flex;
+}
+ 
+.stat {
+    padding: 0 48px;
+    border-left: 2px solid #f8f7f3;
+}
+ 
+/* o primeiro número não tem linha nem espaço à esquerda */
+.stat:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+ 
+.stat small {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #b8c9bc;
+}
+ 
+.stat strong {
+    display: block;
+    font-size: 52px;
+    color: #ffffff;
+}
+ 
+/* o último número (economia) é laranja */
+.stat:last-child strong {
+    color: #f97316;
+}
+ 
+.btn-primary {
+    padding: 16px 28px;
+    border: none;
+    border-radius: 12px;
+    background-color: #f97316;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+.btn-primary:hover {
+    background-color: #ea6a0a;
+}
+ 
+/* ===== SEÇÕES (Em andamento / Concluídos) ===== */
+section h2 {
+    display: inline-block;
+    margin: 0 8px 16px 0;
+    font-size: 36px;
+    color: #1b3a2a;
+}
+ 
+section small,
+section h2 span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #777777;
+}
+ 
+section {
+    margin-bottom: 40px;
+}
+ 
+/* ===== CARDS DOS PEDIDOS ===== */
+.card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    margin-bottom: 16px;
+    background-color: #ffffff;
+    border: 1px solid #e3e0d5;
+    border-radius: 24px;
+}
+ 
+.prod {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 280px;
+}
+ 
+.prod img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+ 
+.prod b {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 22px;
+    color: #1b3a2a;
+}
+ 
+.prod span {
+    font-size: 14px;
+    color: #777777;
+}
+ 
+.col {
+    flex: 1;
+    font-size: 15px;
+    color: #777777;
+}
+ 
+.col b {
+    font-size: 18px;
+    color: #1b3a2a;
+}
+ 
+/* ===== ETIQUETAS DE STATUS ===== */
+.badge {
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+ 
+.aguardando {
+    background-color: #fdeec4;
+    color: #b45f06;
+}
+ 
+.pronto {
+    background-color: #e0f0d6;
+    color: #2f6b1f;
+}
+ 
+.retirado {
+    background-color: #ecebe4;
+    color: #555555;
+}
+ 
+.recusado {
+    background-color: #fde0df;
+    color: #c0392b;
+}
+ 
+/* ===== BOTÕES DOS CARDS ===== */
+.btn-ver {
+    padding: 12px 24px;
+    border: 1.5px solid #1b3a2a;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #1b3a2a;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+/* "+" pega o botão que vem logo depois da etiqueta */
+.pronto + .btn-ver {
+    background-color: #1b3a2a;
+    color: #ffffff;
+}
+ 
+/* nos pedidos concluídos o botão vira um link sublinhado */
+.retirado + .btn-ver,
+.recusado + .btn-ver {
+    border: none;
+    padding: 0 24px;
+    text-decoration: underline;
+}
+ 
+
+
+
 
