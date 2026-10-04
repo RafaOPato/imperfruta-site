@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperfruta - Criar conta</title>
+  <link rel="stylesheet" href="../assets/css/cadastro.css">
+</head>
+
+<body>
+  <main class="pagina">
+    <section class="lado-esquerdo">
+      <p class="logo">imper<span>fruta</span></p>
+
+      <div class="foto-area">
+        <div class="circulo-laranja circulo-amarelo"></div>
+        <img src="../assets/images/img.foto.recorte-b.png" alt="Mão segurando um limão do pé">
+        <p class="selo">Anunciar é grátis</p>
+      </div>
+
+      <h1>Entre na <span>feira.</span></h1>
+      <p class="texto-lado">Quem planta anuncia o lote sem pagar nada. Quem processa encontra fruta boa por menos.</p>
+    </section>
+
+    <section class="lado-direito">
+      <nav class="abas">
+        <a href="cadastro.html" class="ativa">Criar conta</a>
+        <a href="login.html" >Entrar</a>
+      </nav>
+
+      <h2>Criar sua conta</h2>
+      <p class="subtitulo">Primeiro o básico. O resto do perfil você completa depois.</p>
+
+      <form>
+        <p class="titulo-campo">Você é</p>
+        <div class="opcoes">
+          <label class="opcao">
+            <input type="radio" name="tipo" value="produtor" checked>
+            <span class="icone">🌱</span>
+            <span>
+              <strong>Produtor rural</strong>
+              <small>Quero ver fruta fora do padrão</small>
+            </span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="tipo" value="industria">
+            <span class="icone">🏭</span>
+            <span>
+              <strong>Indústria</strong>
+              <small>Quero comprar fruta para processar</small>
+            </span>
+          </label>
+        </div>
+
+        <div class="campos">
+          <div class="campo">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+          </div>
+
+          <div class="campo">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="text" id="whatsapp" name="whatsapp" placeholder="Digite seu WhatsApp">
+            <small>Mandamos um codigo para confirmar o número</small>
+          </div>
+
+          <div class="campo">
+            <label for="cpf">CPF ou CNPJ</label>
+            <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF ou CNPJ">
+          </div>
+
+          <div class="campo">
+            <label for="cidade">Cidade</label>
+            <select id="cidade">
+              <option>Bebedouro, SP</option>
+              <option>Araraquara, SP</option>
+              <option>Limeira, SP</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="sitio">Nome do sítio ou fazenda</label>
+            <input type="text" id="sitio" placeholder="Sítio Três Irmãs">
+          </div>
+
+          <div class="campo">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Digite sua senha">
+            <small>Pelo menos 8 caracteres.</small>
+          </div>
+        </div>
+
+        <label class="termos">
+          <input type="checkbox" name="termos" id="termos">
+          <span>Li e concordo com os <a href="#">Termos de uso</a> e a <a href="#">Política de privacidade</a></span>
+        </label>
+
+        <button type="submit" class="botao">Criar conta</button>
+
+        <p class="ja-tem-conta">Já tem conta? <a href="login.html">Entrar</a></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

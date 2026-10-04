@@ -1,14 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Imperfruta - Login</title>
     <link rel="stylesheet" href="../assets/css/login.css">
 </head>
+
 <body>
 
-    <h1>A Lynn esteve aqui e passou vergonha</h1>
-    
+    <main class="pagina">
+
+        <section class="lado-esquerdo">
+            <p class="logo">imper<span>fruta</span></p>
+
+            <div class="foto-area">
+                <div class="circulo-laranja">
+                </div>
+                <img src="/assets/images/img.foto.recorte-a.png" alt="Diversas laranjas juntas">
+                <p class="selo">Anunciar é grátis</p>
+            </div>
+            <h1>Entre na <span>feira.</span></h1>
+            <p class="texto-lado">Quem planta anuncia o lote sem pagar nada.
+                Quem processa encontra fruta boa por menos.
+            </p>
+        </section>
+
+        <section class="lado-direito">
+            <nav class="abas">
+                <a href="cadastro.html" >Criar conta</a>
+                <a href="login.html" class="ativa">Entrar</a>
+            </nav>
+
+            <h2>Entrar</h2>
+            <p class="subtitulo">Use o WhatsApp que você cadastrou. É o mesmo número que recebe os avisos de pedidos.</p>
+
+            <form>
+
+                <div class="campos-login">
+                    <div class="campo">
+                        <label for="identificador">WhatsApp, CPF ou CNPJ</label>
+                        <input type="text" id="identificador" name="identificador" placeholder="Digite seu WhatsApp, CPF ou CNPJ">
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+                    </div>
+                </div>
+
+                <a class="esqueci" href="#">Esqueci a senha</a>
+                <button class="botao-entrar" type="submit">Entrar <span aria-hidden="true">→</span></button>
+
+                <p class="ou">ou</p>
+
+                <div class="caixa-codigo">
+                    <span class="icone-whatsapp" aria-hidden="true">◉</span>
+                    <p>Não lembra a senha? A gente manda um código de seis dígitos no seu WhatsApp e você entra sem senha nenhuma.</p>
+                    <button class="botao-codigo" type="button">Receber código</button>
+                </div>
+
+                <p class="ainda-nao-tem-conta">Ainda não tem conta? <a href="cadastro.html">Criar conta grátis</a></p>
+
+            </form>
+
+        </section>
+    </main>
+
 </body>
+
 </html>
