@@ -1,3 +1,897 @@
+/* Letras do Google Fonts. O @import tem que ficar no começo do arquivo */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800&display=swap");
+
+
+/* ---------- A PÁGINA TODA ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f8f7f2;
+    color: #18261c;
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Títulos com a letra mais estreita */
+h1,
+h2,
+h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 86;
+    color: #173b26;
+    line-height: 1.05;
+}
+
+
+/* ---------- CABEÇALHO ---------- */
+
+header {
+    height: 72px;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    border-bottom: 1.5px solid #dcd9cc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #173b26;
+    text-decoration: none;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 82;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 7px;
+}
+
+.logo span {
+    color: #d9530a;
+}
+
+nav {
+    display: flex;
+    gap: 6px;
+}
+
+nav a {
+    padding: 9px 14px;
+    border-radius: 999px;
+    color: #4a5a4f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* O link da página em que a pessoa está */
+.ativo {
+    color: #173b26;
+    background: #dfe8d3;
+}
+
+/* O sino, a bolinha com as iniciais e o nome vão para o fim da linha */
+.perfil {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.perfil img {
+    width: 26px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe0c6;
+    color: #173b26;
+    font-weight: 800;
+    border-radius: 50%;
+}
+
+.perfil b,
+.perfil small {
+    display: block;
+}
+
+.perfil small {
+    color: #5f6d62;
+    font-size: 12px;
+}
+
+/* Cabeçalho em telas menores */
+@media (max-width: 1150px) {
+
+    header {
+        padding: 0 32px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    /* O menu desce para a linha de baixo */
+    header {
+        height: auto;
+        padding: 12px 16px 0;
+        flex-wrap: wrap;
+        gap: 4px 12px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .perfil p {
+        display: none;
+    }
+}
+
+
+/* ---------- O QUE JÁ ESTAVA NESTE ARQUIVO ---------- */
+
 h1{
     text-align: center;
 }
+
+
+/* ---------- CONVERSA COM O MANGUINHA ---------- */
+/* O chat.js monta o botão redondo e a janela. O visual deles fica aqui */
+
+/* Os botões do chat usam a mesma letra da página */
+button {
+    font: inherit;
+}
+
+.mg-botao {
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    z-index: 900;
+    width: 74px;
+    height: 74px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #173b26;
+    box-shadow: 0 14px 28px -10px rgba(10, 30, 15, .6);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform .18s;
+}
+
+.mg-botao:hover {
+    transform: translateY(-3px) rotate(-4deg);
+}
+
+.mg-botao img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.mg-botao em {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 99px;
+    background: #ff6a14;
+    border: 3px solid #f8f7f2;
+}
+
+.mg-convite {
+    position: fixed;
+    right: 24px;
+    bottom: 110px;
+    z-index: 900;
+    background: #d6ad73;
+    color: #18261c;
+    font-family: "Permanent Marker", "Comic Sans MS", cursive;
+    font-size: 17px;
+    padding: 9px 15px 7px;
+    border-radius: 6px 9px 5px 10px;
+    box-shadow: 0 10px 18px -12px rgba(70, 45, 10, .8);
+    transform: rotate(-3deg);
+}
+
+.mg-convite b {
+    position: absolute;
+    right: 26px;
+    bottom: -6px;
+    width: 12px;
+    height: 12px;
+    background: #d6ad73;
+    transform: rotate(45deg);
+}
+
+.mg-convite button {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 22px;
+    height: 22px;
+    border: none;
+    border-radius: 99px;
+    background: #173b26;
+    color: #f8f7f2;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.mg-janela {
+    position: fixed;
+    right: 26px;
+    bottom: 112px;
+    z-index: 901;
+    width: 390px;
+    max-width: calc(100vw - 32px);
+    height: min(600px, calc(100vh - 150px));
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    background: #f8f7f2;
+    border: 2px solid #173b26;
+    border-radius: 26px 32px 24px 30px/30px 24px 32px 26px;
+    box-shadow: 0 30px 60px -28px rgba(10, 30, 15, .65);
+}
+
+.mg-janela.aberta {
+    display: flex;
+}
+
+.mg-topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #173b26;
+    color: #f8f7f2;
+}
+
+.mg-topo img {
+    width: 46px;
+    height: 46px;
+    flex: none;
+}
+
+.mg-topo b {
+    display: block;
+    font-family: "Bricolage Grotesque", "Schibsted Grotesk", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 1.1;
+}
+
+.mg-topo small {
+    font-size: 12.5px;
+    color: #aac3ae;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mg-topo small i {
+    width: 7px;
+    height: 7px;
+    border-radius: 99px;
+    background: #86b83a;
+    display: inline-block;
+}
+
+.mg-topo button {
+    margin-left: auto;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 99px;
+    background: rgba(248, 247, 242, .14);
+    color: #f8f7f2;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.mg-conversa {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 16px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mg-fala {
+    max-width: 88%;
+    font-size: 14.8px;
+    line-height: 1.45;
+    padding: 12px 15px;
+    border-radius: 18px 20px 18px 6px;
+    background: #fffefa;
+    border: 1.5px solid #dcd9cc;
+    color: #18261c;
+}
+
+.mg-fala.eu {
+    align-self: flex-end;
+    background: #173b26;
+    color: #f8f7f2;
+    border-color: #173b26;
+    border-radius: 20px 18px 6px 18px;
+}
+
+.mg-fala b {
+    font-weight: 700;
+}
+
+.mg-fala .mg-ir {
+    display: inline-flex;
+    margin-top: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #173b26;
+    background: #ffe0c6;
+    padding: 9px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.mg-pensando {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 14px 16px;
+}
+
+.mg-pensando span {
+    width: 7px;
+    height: 7px;
+    border-radius: 99px;
+    background: #5f6d62;
+    animation: mgp 1s infinite;
+}
+
+.mg-pensando span:nth-child(2) {
+    animation-delay: .16s;
+}
+
+.mg-pensando span:nth-child(3) {
+    animation-delay: .32s;
+}
+
+@keyframes mgp {
+    0%,
+    60%,
+    100% {
+        opacity: .25;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+
+.mg-sugestoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 0 16px 12px;
+}
+
+.mg-sugestoes button {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #173b26;
+    background: #dfe8d3;
+    border: 1.5px solid transparent;
+    border-radius: 999px;
+    padding: 8px 13px;
+    cursor: pointer;
+}
+
+.mg-sugestoes button:hover {
+    border-color: #173b26;
+}
+
+.mg-baixo {
+    display: flex;
+    gap: 8px;
+    padding: 12px 14px;
+    border-top: 1.5px solid #dcd9cc;
+    background: #fffefa;
+}
+
+.mg-baixo input {
+    flex: 1;
+    min-width: 0;
+    font-family: inherit;
+    font-size: 15px;
+    color: #18261c;
+    background: #f8f7f2;
+    border: 1.5px solid #c9c5b3;
+    border-radius: 999px;
+    padding: 12px 16px;
+}
+
+.mg-baixo input:focus {
+    outline: none;
+    border-color: #173b26;
+    box-shadow: 0 0 0 3px rgba(255, 106, 20, .25);
+}
+
+.mg-baixo button {
+    flex: none;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 99px;
+    background: #ff6a14;
+    color: #173b26;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.mg-rodape {
+    font-size: 11.5px;
+    color: #5f6d62;
+    text-align: center;
+    padding: 0 16px 10px;
+    background: #fffefa;
+}
+
+@media (max-width: 520px) {
+
+    .mg-janela {
+        right: 12px;
+        left: 12px;
+        width: auto;
+        bottom: 96px;
+        height: min(560px, calc(100vh - 128px));
+    }
+
+    .mg-botao {
+        right: 16px;
+        bottom: 16px;
+        width: 64px;
+        height: 64px;
+    }
+
+    .mg-convite {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mg-botao,
+    .mg-pensando span {
+        transition: none;
+        animation: none;
+    }
+}
+
+.controls {
+    display: right;          
+    align-items: center;
+    width: 550px;    
+    gap: 16px;
+}
+
+.div-lupa {
+display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    height: 48px;
+    padding: 0 16px;
+    border: 1.5px solid #d6d3c8;
+    border-radius: 16px;
+    background-color: #ffffff;
+}
+
+.Lupa {
+    color: #173b26;
+    font-size: 18px;
+}
+
+.entrada {
+    flex: 1;                
+    border: none;           
+    outline: none;          
+    background: transparent;
+    font-size: 15px;
+    color: #333333;
+}
+
+
+.seletora {
+    height: 48px;
+    padding: 0 16px 0 56px;
+    width: 240px;
+    border: 1.5px solid #d6d3c8;
+    border-radius: 16px;
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #333333;
+
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b3a2a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='18' height='16' rx='2'/><line x1='3' y1='10' x2='21' y2='10'/><line x1='8' y1='3' x2='8' y2='7'/><line x1='16' y1='3' x2='16' y2='7'/></svg>");
+    background-repeat: no-repeat;
+    background-position: 16px center;
+    background-size: 20px;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f7f2;
+    color: #444444;
+}
+ 
+
+
+ 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #173b26;
+    text-decoration: none;
+}
+ 
+.logo img {
+    width: 40px;
+}
+ 
+.logo span {
+    color: #ff6a14
+}
+ 
+nav {
+    display: flex;
+    gap: 8px;
+}
+ 
+nav a {
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: #3d5a4a;
+    font-size: 18px;
+    text-decoration: none;
+}
+ 
+nav a:hover {
+    background-color: #e6ede1;
+}
+ 
+nav a.ativo {
+    background-color: #dfe9d6;
+    color: #1b3a2a;
+}
+ 
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+ 
+.perfil img {
+    width: 28px;
+}
+ 
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #fddcc4;
+    color: #1b3a2a;
+    font-weight: bold;
+}
+ 
+.perfil b {
+    display: block;
+    color: #1b3a2a;
+}
+ 
+.perfil small {
+    color: #777777;
+}
+ 
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+    padding: 48px;
+}
+ 
+/* título + busca lado a lado */
+.top-row {
+    display: grid;
+    grid-template-columns: 1fr 600px;
+    align-items: end;
+    margin-bottom: 32px;
+}
+ 
+.top-row h1 {
+    font-size: 72px;
+    color: #1b3a2a;
+}
+ 
+.top-row p {
+    font-size: 20px;
+    color: #555555;
+    margin-top: 16px;
+}
+ 
+/* a busca fica na coluna da direita, ocupando as duas linhas */
+.top-row .controls {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    justify-self: end;
+}
+ 
+/* ===== PARTE QUE VOCÊ JÁ TINHA ===== */
+.controls {
+    display: flex;          
+    align-items: center;    
+    gap: 16px;
+}
+ 
+.div-lupa {
+display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    height: 48px;
+    padding: 0 16px;
+    border: 1.5px solid #d6d3c8;
+    border-radius: 16px;
+    background-color: #ffffff;
+}
+ 
+.Lupa {
+    color: #1b3a2a;
+    font-size: 18px;
+}
+ 
+.entrada {
+    flex: 1;                
+    border: none;           
+    outline: none;          
+    background: transparent;
+    font-size: 15px;
+    color: #333333;
+}
+/* ===== FIM DA PARTE QUE VOCÊ JÁ TINHA ===== */
+ 
+.seletora {
+    height: 48px;
+    padding: 0 16px;
+    border: 1.5px solid #d6d3c8;
+    border-radius: 16px;
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #333333;
+}
+ 
+/* ===== BANNER VERDE ===== */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 48px;
+    margin-bottom: 48px;
+    background-color: #1b3a2a;
+    border-radius: 40px;
+}
+ 
+.stats {
+    display: flex;
+}
+ 
+.stat {
+    padding: 0 48px;
+    border-left: 2px solid #f8f7f3;
+}
+ 
+/* o primeiro número não tem linha nem espaço à esquerda */
+.stat:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+ 
+.stat small {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #b8c9bc;
+}
+ 
+.stat strong {
+    display: block;
+    font-size: 52px;
+    color: #ffffff;
+}
+ 
+/* o último número (economia) é laranja */
+.stat:last-child strong {
+    color: #f97316;
+}
+ 
+.btn-primary {
+    padding: 16px 28px;
+    border: none;
+    border-radius: 12px;
+    background-color: #f97316;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+.btn-primary:hover {
+    background-color: #ea6a0a;
+}
+ 
+/* ===== SEÇÕES (Em andamento / Concluídos) ===== */
+section h2 {
+    display: inline-block;
+    margin: 0 8px 16px 0;
+    font-size: 36px;
+    color: #1b3a2a;
+}
+ 
+section small,
+section h2 span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #777777;
+}
+ 
+section {
+    margin-bottom: 40px;
+}
+ 
+/* ===== CARDS DOS PEDIDOS ===== */
+.card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    margin-bottom: 16px;
+    background-color: #ffffff;
+    border: 1px solid #e3e0d5;
+    border-radius: 24px;
+}
+ 
+.prod {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 280px;
+}
+ 
+.prod img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+ 
+.prod b {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 22px;
+    color: #1b3a2a;
+}
+ 
+.prod span {
+    font-size: 14px;
+    color: #777777;
+}
+ 
+.col {
+    flex: 1;
+    font-size: 15px;
+    color: #777777;
+}
+ 
+.col b {
+    font-size: 18px;
+    color: #1b3a2a;
+}
+ 
+/* ===== ETIQUETAS DE STATUS ===== */
+.badge {
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+ 
+.aguardando {
+    background-color: #fdeec4;
+    color: #b45f06;
+}
+ 
+.pronto {
+    background-color: #e0f0d6;
+    color: #2f6b1f;
+}
+ 
+.retirado {
+    background-color: #ecebe4;
+    color: #555555;
+}
+ 
+.recusado {
+    background-color: #fde0df;
+    color: #c0392b;
+}
+ 
+/* ===== BOTÕES DOS CARDS ===== */
+.btn-ver {
+    padding: 12px 24px;
+    border: 1.5px solid #1b3a2a;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #1b3a2a;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+/* "+" pega o botão que vem logo depois da etiqueta */
+.pronto + .btn-ver {
+    background-color: #1b3a2a;
+    color: #ffffff;
+}
+ 
+/* nos pedidos concluídos o botão vira um link sublinhado */
+.retirado + .btn-ver,
+.recusado + .btn-ver {
+    border: none;
+    padding: 0 24px;
+    text-decoration: underline;
+}
+ 
+
+
+
+

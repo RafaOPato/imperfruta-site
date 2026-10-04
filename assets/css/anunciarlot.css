@@ -1,3 +1,940 @@
+/* Letras do Google Fonts. O @import tem que ficar no começo do arquivo */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800&display=swap");
+
+
+/* ---------- A PÁGINA TODA ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f8f7f2;
+    color: #18261c;
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Títulos com a letra mais estreita */
+h1,
+h2,
+h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 86;
+    color: #173b26;
+    line-height: 1.05;
+}
+
+
+/* ---------- CABEÇALHO ---------- */
+
+header {
+    height: 72px;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    border-bottom: 1.5px solid #dcd9cc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #173b26;
+    text-decoration: none;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 82;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 7px;
+}
+
+.logo span {
+    color: #d9530a;
+}
+
+nav {
+    display: flex;
+    gap: 6px;
+}
+
+nav a {
+    padding: 9px 14px;
+    border-radius: 999px;
+    color: #4a5a4f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* O link da página em que a pessoa está */
+.ativo {
+    color: #173b26;
+    background: #dfe8d3;
+}
+
+/* O sino, a bolinha com as iniciais e o nome vão para o fim da linha */
+.perfil {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.perfil img {
+    width: 26px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dfe8d3;
+    color: #173b26;
+    font-weight: 800;
+    border-radius: 50%;
+}
+
+.perfil b,
+.perfil small {
+    display: block;
+}
+
+.perfil small {
+    color: #5f6d62;
+    font-size: 12px;
+}
+
+/* Cabeçalho em telas menores */
+@media (max-width: 1150px) {
+
+    header {
+        padding: 0 32px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    /* O menu desce para a linha de baixo */
+    header {
+        height: auto;
+        padding: 12px 16px 0;
+        flex-wrap: wrap;
+        gap: 4px 12px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .perfil p {
+        display: none;
+    }
+}
+
+
+/* ---------- O QUE JÁ ESTAVA NESTE ARQUIVO ---------- */
+
 h1{
+    color: green;
+    text-decoration: dashed;
+    margin: 30px;
+
+}
+
+
+/* ---------- CONVERSA COM O MANGUINHA ---------- */
+/* O chat.js monta o botão redondo e a janela. O visual deles fica aqui */
+
+/* Os botões do chat usam a mesma letra da página */
+button {
+    font: inherit;
+}
+
+.mg-botao {
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    z-index: 900;
+    width: 74px;
+    height: 74px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #173b26;
+    box-shadow: 0 14px 28px -10px rgba(10, 30, 15, .6);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform .18s;
+}
+
+.mg-botao:hover {
+    transform: translateY(-3px) rotate(-4deg);
+}
+
+.mg-botao img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.mg-botao em {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 99px;
+    background: #ff6a14;
+    border: 3px solid #f8f7f2;
+}
+
+.mg-convite {
+    position: fixed;
+    right: 24px;
+    bottom: 110px;
+    z-index: 900;
+    background: #d6ad73;
+    color: #18261c;
+    font-family: "Permanent Marker", "Comic Sans MS", cursive;
+    font-size: 17px;
+    padding: 9px 15px 7px;
+    border-radius: 6px 9px 5px 10px;
+    box-shadow: 0 10px 18px -12px rgba(70, 45, 10, .8);
+    transform: rotate(-3deg);
+}
+
+.mg-convite b {
+    position: absolute;
+    right: 26px;
+    bottom: -6px;
+    width: 12px;
+    height: 12px;
+    background: #d6ad73;
+    transform: rotate(45deg);
+}
+
+.mg-convite button {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 22px;
+    height: 22px;
+    border: none;
+    border-radius: 99px;
+    background: #173b26;
+    color: #f8f7f2;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.mg-janela {
+    position: fixed;
+    right: 26px;
+    bottom: 112px;
+    z-index: 901;
+    width: 390px;
+    max-width: calc(100vw - 32px);
+    height: min(600px, calc(100vh - 150px));
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    background: #f8f7f2;
+    border: 2px solid #173b26;
+    border-radius: 26px 32px 24px 30px/30px 24px 32px 26px;
+    box-shadow: 0 30px 60px -28px rgba(10, 30, 15, .65);
+}
+
+.mg-janela.aberta {
+    display: flex;
+}
+
+.mg-topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #173b26;
+    color: #f8f7f2;
+}
+
+.mg-topo img {
+    width: 46px;
+    height: 46px;
+    flex: none;
+}
+
+.mg-topo b {
+    display: block;
+    font-family: "Bricolage Grotesque", "Schibsted Grotesk", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 1.1;
+}
+
+.mg-topo small {
+    font-size: 12.5px;
+    color: #aac3ae;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mg-topo small i {
+    width: 7px;
+    height: 7px;
+    border-radius: 99px;
+    background: #86b83a;
+    display: inline-block;
+}
+
+.mg-topo button {
+    margin-left: auto;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 99px;
+    background: rgba(248, 247, 242, .14);
+    color: #f8f7f2;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.mg-conversa {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 16px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mg-fala {
+    max-width: 88%;
+    font-size: 14.8px;
+    line-height: 1.45;
+    padding: 12px 15px;
+    border-radius: 18px 20px 18px 6px;
+    background: #fffefa;
+    border: 1.5px solid #dcd9cc;
+    color: #18261c;
+}
+
+.mg-fala.eu {
+    align-self: flex-end;
+    background: #173b26;
+    color: #f8f7f2;
+    border-color: #173b26;
+    border-radius: 20px 18px 6px 18px;
+}
+
+.mg-fala b {
+    font-weight: 700;
+}
+
+.mg-fala .mg-ir {
+    display: inline-flex;
+    margin-top: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #173b26;
+    background: #ffe0c6;
+    padding: 9px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.mg-pensando {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 14px 16px;
+}
+
+.mg-pensando span {
+    width: 7px;
+    height: 7px;
+    border-radius: 99px;
+    background: #5f6d62;
+    animation: mgp 1s infinite;
+}
+
+.mg-pensando span:nth-child(2) {
+    animation-delay: .16s;
+}
+
+.mg-pensando span:nth-child(3) {
+    animation-delay: .32s;
+}
+
+@keyframes mgp {
+    0%,
+    60%,
+    100% {
+        opacity: .25;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+
+.mg-sugestoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 0 16px 12px;
+}
+
+.mg-sugestoes button {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #173b26;
+    background: #dfe8d3;
+    border: 1.5px solid transparent;
+    border-radius: 999px;
+    padding: 8px 13px;
+    cursor: pointer;
+}
+
+.mg-sugestoes button:hover {
+    border-color: #173b26;
+}
+
+.mg-baixo {
+    display: flex;
+    gap: 8px;
+    padding: 12px 14px;
+    border-top: 1.5px solid #dcd9cc;
+    background: #fffefa;
+}
+
+.mg-baixo input {
+    flex: 1;
+    min-width: 0;
+    font-family: inherit;
+    font-size: 15px;
+    color: #18261c;
+    background: #f8f7f2;
+    border: 1.5px solid #c9c5b3;
+    border-radius: 999px;
+    padding: 12px 16px;
+}
+
+.mg-baixo input:focus {
+    outline: none;
+    border-color: #173b26;
+    box-shadow: 0 0 0 3px rgba(255, 106, 20, .25);
+}
+
+.mg-baixo button {
+    flex: none;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 99px;
+    background: #ff6a14;
+    color: #173b26;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.mg-rodape {
+    font-size: 11.5px;
+    color: #5f6d62;
     text-align: center;
+    padding: 0 16px 10px;
+    background: #fffefa;
+}
+
+@media (max-width: 520px) {
+
+    .mg-janela {
+        right: 12px;
+        left: 12px;
+        width: auto;
+        bottom: 96px;
+        height: min(560px, calc(100vh - 128px));
+    }
+
+    .mg-botao {
+        right: 16px;
+        bottom: 16px;
+        width: 64px;
+        height: 64px;
+    }
+
+    .mg-convite {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mg-botao,
+    .mg-pensando span {
+        transition: none;
+        animation: none;
+    }
+}
+
+
+:root {
+    --verde: #173b26;
+    --verde-escuro: #0f2a1b;
+    --verde-claro: #dfe8d3;
+    --verde-ok: #2f7d3b;
+    --creme: #fffefa;
+    --borda: #dcd9cc;
+    --borda-campo: #cfcbb9;
+    --texto-suave: #4a5a4f;
+    --cinza: #5f6d62;
+    --laranja: #ff6a14;
+    --laranja-claro: #ffdfc9;
+}
+
+
+/* ---------- DUAS COLUNAS: formulário à esquerda, resumo à direita ---------- */
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 0 48px 64px;
+}
+
+.conteudo-principal {
+    flex: 1;
+}
+
+.resumo {
+    width: 330px;
+    padding-top: 160px;
+    text-align: right; /* só para o "Rascunho salvo agora" ir para a direita */
+}
+
+
+/* ---------- TÍTULO DA PÁGINA ---------- */
+
+.inicio {
+    height: 200px;
+    padding-top: 30px;
+}
+
+.inicio p {
+    margin-top: 10px;
+    max-width: 560px;
+    color: var(--texto-suave);
+}
+
+.inicio h1 {
+    width: auto;
+    height: auto;
+    margin: 10px 0;
+    font-size: 52px;
+    color: var(--verde);
+}
+
+
+/* ---------- CARTÕES BRANCOS ---------- */
+
+.principal {
+    background-color: var(--creme);
+    border: 1.5px solid var(--borda);
+    border-radius: 24px;
+    padding: 28px;
+    margin-bottom: 20px;
+}
+
+.principal h2 {
+    font-size: 26px;
+}
+
+.meio p,
+.oq-diferente p {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    color: var(--texto-suave);
+}
+
+
+/* ---------- FOTOS ---------- */
+
+.pai-imagens {
+    display: flex;
+    gap: 12px;
+}
+
+.imagem-filho {
+    width: 150px;
+    height: 140px;
+}
+
+.imagem-filho img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* A última é o botão "Tirar foto", que já vem com a borda tracejada */
+.imagem-filho:last-child img {
+    object-fit: contain;
+    border-radius: 0;
+}
+
+
+/* ---------- CHIPS (as bolinhas de escolher) ---------- */
+
+.chips-fruta,
+.chips-clasifc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0 24px;
+}
+
+.marcar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid var(--borda-campo);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+/* Esconde a caixinha de marcar: quem aparece é o chip */
+.marcar input {
+    position: absolute;
+    opacity: 0;
+}
+
+.marcar:hover {
+    border-color: var(--verde);
+}
+
+/* Quando a pessoa clica, o chip fica verde-escuro com letra clara */
+.marcar:has(input:checked) {
+    background-color: var(--verde);
+    border-color: var(--verde);
+    color: #f8f7f2;
+}
+
+/* Contorno laranja quando navega com o teclado (Tab) */
+.marcar:has(input:focus-visible) {
+    outline: 3px solid var(--laranja);
+}
+
+/* Desenho de cada fruta (a última, "Outra fruta", fica sem) */
+.chips-fruta .marcar:not(:last-child)::before {
+    content: var(--icone);
+    font-size: 18px;
+    line-height: 1;
+}
+
+.chips-fruta .marcar:nth-child(1) { --icone: "🍊"; }  /* laranja */
+.chips-fruta .marcar:nth-child(2) { --icone: "🍋"; }  /* limão */
+.chips-fruta .marcar:nth-child(3) { --icone: "🥭"; }  /* manga */
+.chips-fruta .marcar:nth-child(4) { --icone: "🍐"; }  /* goiaba */
+.chips-fruta .marcar:nth-child(5) { --icone: "🍈"; }  /* maracujá */
+
+/* Visto (✓) que aparece nos chips de característica quando marcados */
+.chips-clasifc .marcar:has(input:checked)::before {
+    content: "✓";
+    font-weight: bold;
+}
+
+
+/* ---------- CAMPOS ---------- */
+
+.duas-colunas {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+/* Cada metade ocupa o mesmo espaço */
+.duas-colunas > div {
+    flex: 1;
+}
+
+/* Rótulos em cima dos campos */
+.campo label,
+.qnt-qnt label,
+.Preco-kg label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--verde);
+}
+
+.entrada {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    border: 1.5px solid var(--borda-campo);
+    border-radius: 14px;
+    background-color: var(--creme);
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Borda verde com brilho laranja ao clicar no campo */
+.entrada:focus {
+    outline: none;
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(255, 106, 20, 0.3);
+}
+
+/* Quantidade e Preço: a caixa é o .campo, o input fica sem borda dentro */
+.qnt-qnt .campo,
+.Preco-kg .campo {
+    display: flex;
+    align-items: center;
+    height: 52px;
+    padding: 0 16px;
+    border: 1.5px solid var(--borda-campo);
+    border-radius: 14px;
+    background-color: var(--creme);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.qnt-qnt .campo:focus-within,
+.Preco-kg .campo:focus-within {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(255, 106, 20, 0.3);
+}
+
+.qnt-qnt .entrada,
+.Preco-kg .entrada {
+    flex: 1;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+/* Dentro da caixa o brilho já é da caixa, então o input não precisa dele */
+.qnt-qnt .entrada:focus,
+.Preco-kg .entrada:focus {
+    box-shadow: none;
+}
+
+.prefixo,
+.unidade {
+    color: var(--cinza);
+}
+
+.ajuda {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--cinza);
+}
+
+.dica {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background-color: var(--laranja-claro);
+}
+
+.dica-icone {
+    font-size: 20px;
+}
+
+
+/* ---------- COLUNA DA DIREITA ---------- */
+
+/* "Rascunho salvo agora" com o visto ao lado */
+.resumo > img {
+    width: 18px;
+    vertical-align: middle;
+}
+
+.lado-direito {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--verde-ok);
+}
+
+/* Cartão "Como vai aparecer na feira" */
+.meio-direita {
+    text-align: left;
+    padding: 20px;
+    background-color: var(--creme);
+    border: 1.5px solid var(--borda);
+    border-radius: 24px;
+}
+
+.meio-direita span {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+}
+
+.meio-direita img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.meio-direita h2 {
+    margin-top: 16px;
+    font-size: 26px;
+}
+
+/* O segundo h2 é o preço: fonte grande, e o "por quilo" fica ao lado */
+.meio-direita h2:nth-of-type(2) {
+    display: inline-block;
+    font-family: "Big Shoulders Stencil Display", sans-serif;
+    font-size: 48px;
+}
+
+.meio-direita h2:nth-of-type(2) + p {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.meio-direita p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--texto-suave);
+}
+
+/* Botões "Mancha na casca" e "Calibre misto" com o visto na frente */
+.meio-direita button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    margin-right: 6px;
+    padding: 9px 16px;
+    border: 1.5px solid var(--borda-campo);
+    border-radius: 999px;
+    background-color: transparent;
+    font-weight: 600;
+}
+
+.meio-direita button::before {
+    content: "✓";
+}
+
+/* Botão publicar, aviso e caixa do WhatsApp */
+.meio-direita-botao {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.meio-direita-botao button {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 16px;
+    background-color: var(--verde);
+    color: #f8f7f2;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Seta depois do texto "Publicar lote" */
+.meio-direita-botao button::after {
+    content: "  →";
+}
+
+.meio-direita-botao button:hover {
+    background-color: var(--verde-escuro);
+}
+
+.meio-direita-botao p {
+    margin: 16px 8px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--cinza);
+}
+
+/* Caixa verde-clara do WhatsApp */
+.meio-direita-botao section {
+    display: flex;
+    gap: 12px;
+    padding: 16px 18px;
+    border-radius: 20px;
+    background-color: var(--verde-claro);
+}
+
+/* Sem fundo: a imagem aparece do jeito que ela é */
+.whats-foto {
+    width: 34px;
+    height: 34px;
+}
+
+.whats-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* ---------- TELAS PEQUENAS ---------- */
+
+@media (max-width: 860px) {
+
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 16px 96px;
+    }
+
+    .inicio {
+        height: auto;
+    }
+
+    .resumo {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .pai-imagens,
+    .duas-colunas {
+        flex-wrap: wrap;
+    }
+
+    .duas-colunas {
+        flex-direction: column;
+    }
 }

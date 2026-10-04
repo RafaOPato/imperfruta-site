@@ -1,12 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/acompanharpedido.css">
+    <title>Acompanhar pedido - ImperFruta</title>
+    <link rel="stylesheet" href="/assets/css/acompanharpedido.css">
 </head>
 <body>
-    
+    <header>
+        <a class="logo" href="../index.html">
+            <img src="../assets/images/manga.svg" alt="logo da manguinha">
+            imper<span>fruta</span>
+        </a>
+        <nav>
+            <a href="lotsnafeira.html">Lotes na feira</a>
+            <a class="ativo" href="meuspedidos.html">Meus pedidos</a>
+            <a href="#">Alertas</a>
+            <a href="../index.html">Como funciona</a>
+        </nav>
+        <div class="perfil">
+            <img src="../assets/images/notificacaoanunciolote.png" alt="notificações">
+            <span class="avatar">PR</span>
+            <p>
+                <b>Polpas Rio Pardo</b>
+                <small>Ribeirão Preto, SP</small>
+            </p>
+        </div>
+    </header>
+    <section class="topo-pedido">
+        <p class="texto-topo"><a href="meuspedidos.html">Meus pedidos</a> > <b>Pedido IMP-2291</b></p>
+        <p class="texto-topo">Pedido IMP-2291, feito em 13/09 às 10h24</p>
+        <div class="titulo-pedido">
+            <h1>Manga Tommy, 2.000 kg</h1>
+            <span class="status">Pronto para retirar</span>
+        </div>
+        <div class="botoes-pedido">
+            <a class="link-laranja" href="#">Preciso de ajuda</a>
+            <a class="link-laranja" href="#">Contestar carga</a>
+            <a class="btn-baixar" href="#">Baixar comprovante</a>
+        </div>
+    </section>
+    <section class="pai-pedido">
+        <div class="lado-esquerdo">
+            <div class="quadro-pedido">
+                <h2>Andamento</h2>
+                <div class="andamento">
+                    <div class="etapa feito">
+                        <span class="bolinha"></span>
+                        <b>Pedido feito</b>
+                        <p>13/09, 10h24</p>
+                    </div>
+                    <div class="etapa feito">
+                        <span class="bolinha"></span>
+                        <b>Pix confirmado</b>
+                        <p>13/09, 10h25</p>
+                    </div>
+                    <div class="etapa feito">
+                        <span class="bolinha"></span>
+                        <b>Produtor aceitou</b>
+                        <p>13/09, 18h02</p>
+                    </div>
+                    <div class="etapa agora">
+                        <span class="bolinha"></span>
+                        <b>Retirada</b>
+                        <p>quarta, 16/09, 14h</p>
+                    </div>
+                    <div class="etapa">
+                        <span class="bolinha"></span>
+                        <b>Concluído</b>
+                        <p>quando o produtor digitar o código</p>
+                    </div>
+                </div>
+            </div>
+            <div class="codigo-retirada">
+                <div class="texto-codigo">
+                    <h2>Código de retirada</h2>
+                    <p>Quando o caminhão chegar, o motorista mostra este código. O produtor digita no app, a retirada fica registrada e o Pix é liberado para ele.</p>
+                    <a class="btn-motorista" href="#">Mandar para o motorista</a>
+                    <button class="btn-copiar">Copiar</button>
+                </div>
+                <div class="placa">
+                    <img class="foto-codigo" src="../assets/images/numerodaretirada.png" alt="Código de retirada">
+                </div>
+            </div>
+            <div class="quadro-pedido retirada">
+                <img class="mapa" src="../assets/images/mapafrg.png" alt="mapa da Fazenda Boa Sombra em Monte Alto">
+                <div class="dados-retirada">
+                    <h2>Retirada</h2>
+                    <div class="elementos">
+                        <b>Fazenda Boa Sombra</b>
+                        <p>Estrada vicinal Monte Alto a Taquaritinga, km 4, Monte Alto SP</p>
+                    </div>
+                    <div class="elementos">
+                        <b>Quarta, 16/09, às 14h</b>
+                        <p>O sítio carrega das 7h às 16h</p>
+                    </div>
+                    <div class="elementos">
+                        <b>Placa FTR 2A91</b>
+                        <p>Motorista Josué Almeida</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quadro-pedido nota-fiscal">
+                <div>
+                    <b>Nota fiscal do produtor</b>
+                    <p>O produtor anexa a nota de produtor rural até a retirada. Ela chega no e-mail de compras da sua empresa.</p>
+                </div>
+                <span class="aguardando">Aguardando</span>
+            </div>
+        </div>
+        <div class="lado-direito">
+            <div class="quadro-pedido">
+                <h2>Resumo</h2>
+                <div class="produto">
+                    <img class="foto-produto" src="../assets/images/mangaresumo.png" alt="Mangas verdes">
+                    <div>
+                        <b>Manga Tommy</b>
+                        <p>Lote 0398, tamanho fora do padrão</p>
+                    </div>
+                </div>
+                <div class="linha-valor">
+                    <span>2.000 kg × R$ 1,10</span>
+                    <span>R$ 2.200,00</span>
+                </div>
+                <div class="linha-valor">
+                    <span>Taxa da plataforma (6%)</span>
+                    <span>R$ 132,00</span>
+                </div>
+                <div class="linha-valor total">
+                    <b>Total pago</b>
+                    <b>R$ 2.332,00</b>
+                </div>
+                <p class="aviso-pix">Pago com Pix em 13/09. Fica guardado até a retirada.</p>
+            </div>
+            <div class="quadro-pedido fazenda">
+                <img class="foto-fazenda" src="/assets/images/mangafazendabsombra.png" alt="Mangas verdes no pé">
+                <p class="avatar avatar-fazenda">AF</p>
+                <h3>Fazenda Boa Sombra</h3>
+                <p>Ailton Ferreira, Monte Alto SP</p>
+                <p>22 vendas entregues | no app desde abril</p>
+                <a class="btn-whats" href="https://wa.me/5511900000000">Chamar no WhatsApp</a>
+                <a class="link-laranja" href="lotsnafeira.html">Ver outros lotes da fazenda</a>
+            </div>
+            <div class="quadro-pedido empresa">
+                <h2>Dados da sua empresa</h2>
+                <a class="link-laranja link-editar" href="#">Editar</a>
+                <div class="elementos">
+                    <p class="campo">Razão social</p>
+                    <b>Polpas Rio Pardo Ltda</b>
+                </div>
+                <div class="elementos">
+                    <p class="campo">CNPJ</p>
+                    <b>41.208.337/0001-06</b>
+                </div>
+                <div class="elementos">
+                    <p class="campo">Responsável pelas compras</p>
+                    <b>Marina Duarte</b>
+                </div>
+                <div class="elementos">
+                    <p class="campo">E-mail para nota fiscal</p>
+                    <b>compras@polpasriopardo.com.br</b>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../assets/js/chat.js" defer></script>
 </body>
 </html>

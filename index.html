@@ -1,12 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ImperFruta</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <h1>olá, tudo bem?</h1>
+    <header>
+        <div class="logo">
+            <img src="assets/images/manga.svg" alt="logo da manguinha">
+            <a href="index.html">
+                <h1 class="h1">Imper</h1><h1 class="h2">Fruta</h1>
+            </a>
+        </div>
+        <nav>
+            <a href="#">Como funciona</a>
+            <a href="#">Para quem planta</a>
+            <a href="#">Para quem processa</a>
+            <a href="pages/lotsnafeira.html">Lotes na feira</a>
+        </nav>
+
+        <div>
+            <a class="btn-entrar" href="/login.html">Entrar</a>
+            <a class="btn-cconta" href="pages/login.html">Criar conta</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>A casca tem defeito. A polpa, não.</h1><br>
+        <p>Lotes de fruta fora do padrão estético, direto do produtor, para indústrias de suco, polpa, sorvete e doce.
+        </p>
+        <a class="btn-cconta" href="pages/login.html">Criar conta</a>
+        <a href="pages/lotsnafeira.html">Lotes na feira</a>
+    </section>
+
+    <section class="quadro">
+        <h2>Na feira hoje</h2><br>
+        <p>47 lotes anunciados por produtores de 9 estados. Preço por quilo, retirada no sítio</p>
+        <div>
+            <a href="pages/lotsnafeira.html">Lotes na feira</a>
+        </div>
+        <div class="linha-lote">
+            <span class="nome">Laranja pêra</span>
+            <span class="defeito">manchas de ferrugem</span>
+            <span class="onde">Bebedouro,SP</span>
+            <span class="kg">8.400 kg</span>
+            <span class="preco">R$ 0,78/kg</span>
+        </div>
+        <div class="linha-lote">
+            <span class="nome">Manga tommy</span>
+            <span class="defeito">tamanho fora do padrão</span>
+            <span class="onde">Monte Alto,SP</span>
+            <span class="kg">3.200 kg</span>
+            <span class="preco">R$ 1,10/kg</span>
+        </div>
+        <div class="linha-lote">
+            <span class="nome">Caju</span>
+            <span class="defeito">Pedúnculo miúdo</span>
+            <span class="onde">Pacajus,CE</span>
+            <span class="kg">1.500 kg</span>
+            <span class="preco">R$ 0,62/kg</span>
+        </div>
+        <div class="linha-lote">
+            <span class="nome">Mamão formosa</span>
+            <span class="defeito">mancha preta na casca</span>
+            <span class="onde">Pirangi,SP</span>
+            <span class="kg">2.100 kg</span>
+            <span class="preco">R$ 0,85/kg</span>
+        </div>
+        <div class="linha-lote">
+            <span class="nome">Maracujá azedo</span>
+            <span class="defeito">Casca enrugada</span>
+            <span class="onde">Araguari,MG</span>
+            <span class="kg">1.300 kg</span>
+            <span class="preco">R$ 2,90/kg</span>
+        </div>
+        <p>O preço é do produtor. A indústria paga 6% de taxa em cada compra.</p>
+    </section>
+
+    <section>
+        <h2>Um lado tem fruta sobrando. O outro precisa de polpa.</h2>
+        <div class="pai">
+            <div class="lado-esquerdo">
+                <h3>Quem planta</h3>
+                <p>Sítio, fazenda ou cooperativa.</p>
+                <div class="elementos"> <b>Fotografa</b>
+                    <p>Tira foto do lote do jeito que ele está,com mancha e tudo.</p>
+                </div>
+                <div class="elementos"> <b>Anuncia</b>
+                    <p>Diz quantos quilos tem, o preço e até quando dá pra retirar.</p>
+                </div>
+                <div class="elementos"> <b>Recebe</b>
+                    <p>O pagamento já está garantido quando o caminhão chega.</p>
+                </div>
+            </div>
+            <img class="foto recorte-b foto-meio"
+                src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/CASHEW_FRUIT.jpg/960px-CASHEW_FRUIT.jpg"
+                alt="Mãos segurando cajus">
+
+            <div class="lado-direito">
+                <h3>Quem processa</h3>
+                <p>Suco, polpam sorvete, doce ou geleia.</p>
+                <div class="elementos"> <b>Filtra</b>
+                    <p>Escolhe fruta, região, quantidade e o defeito que não atrapalha a produção.</p>
+                </div>
+                <div class="elementos"> <b>Compra</b>
+                    <p>Fecha o pedido no pix. O produtor confirma em até 24 horas.</p>
+                </div>
+                <div class="elementos"> <b>Retira</b>
+                    <p>O caminhão busca no sítio, no dia e no horário combinado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faixa">
+        <div class="fila">
+            <div class="rolo">
+                <div class="copia">
+                    <span>Laranja</span>
+                    <span class="fruto"></span>
+                    <span>Manga</span>
+                    <span class="fruto"></span>
+                    <span>Goiaba</span>
+                    <span class="fruto"></span>
+                    <span>Maracujá</span>
+                    <span class="fruto"></span>
+                    <span>Acerola</span>
+                    <span class="fruto"></span>
+                    <span>Tangerina</span>
+                    <span class="fruto"></span>
+                </div>
+
+                <div class="copia" aria-hidden="true">
+                    <span>Laranja</span>
+                    <span class="fruto"></span>
+                    <span>Manga</span>
+                    <span class="fruto"></span>
+                    <span>Goiaba</span>
+                    <span class="fruto"></span>
+                    <span>Maracujá</span>
+                    <span class="fruto"></span>
+                    <span>Acerola</span>
+                    <span class="fruto"></span>
+                    <span>Tangerina</span>
+                    <span class="fruto"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fila">
+            <div class="rolo">
+                <div class="copia">
+                    <span>Uva</span>
+                    <span class="fruto"></span>
+                    <span>Caju</span>
+                    <span class="fruto"></span>
+                    <span>Mamão</span>
+                    <span class="fruto"></span>
+                    <span>Limão</span>
+                    <span class="fruto"></span>
+                    <span>Banana</span>
+                    <span class="fruto"></span>
+                    <span>Abacaxi</span>
+                    <span class="fruto"></span>
+                    <span>Coco</span>
+                    <span class="fruto"></span>
+                </div>
+
+                <div class="copia" aria-hidden="true">
+                    <span>Uva</span>
+                    <span class="fruto"></span>
+                    <span>Caju</span>
+                    <span class="fruto"></span>
+                    <span>Mamão</span>
+                    <span class="fruto"></span>
+                    <span>Limão</span>
+                    <span class="fruto"></span>
+                    <span>Banana</span>
+                    <span class="fruto"></span>
+                    <span>Abacaxi</span>
+                    <span class="fruto"></span>
+                    <span>Coco</span>
+                    <span class="fruto"></span>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="principal-manga">
+        <img src="assets/images/fotodamanga.png" alt="Mangas verdes">
+            <h2>Sem surpresa na hora de retirar.</h2>
+            <div class="topicos-manga"> 
+        <img src="assets/images/iconecamera.png" alt="ícone de câmera">
+                <b>Foto do lote, tirada no dia</b>
+                <p>O produtor fotografa a fruta como ela está. O defeito aparece na foto e na descrição</p>
+            </div>
+            <div class="topicos-manga"> 
+        <img src="assets/images/iconeconfere.png" alt="ícone de confere">
+                <b>Seu pix fica guardado</b>
+                <p>O dinheiro só vai para o produtor quando ele confirma a retirada no sítio com o código do seu pedido.</p>
+            </div>
+            <div class="topicos-manga"> 
+        <img src="assets/images/iconenota.png" alt="ícone de nota">
+                <b>Nota em todo pedido</b>
+                <p>Cada venda sai com nota fiscal de produtor rural, pronta para a sua contabilidade.</p>
+            </div>
+
+        </div>
+        
+    </section>
+
+    <section>
+        <div class="pai-final-site">
+            <div class="esquerdo-final">
+                <h2>Tem fruta parada
+no pé?</h2>
+                <p>Produtor anuncia de graça e recebe o valor cheio. A indústria paga 6% de taxa em cada compra.</p>
+                <a href="pages/login.html">Criar conta</a>
+                <a href="wa.me/+551190028922">Falar no WhatsApp</a>
+            </div>
+
+            <div class="direito-final">
+                <img src="assets/images/frutanope.png" alt="Fotos das frutas no pé">
+                <img src="assets/images/laranjamarrom.png" alt="uma laranja marrom">
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <footer>
+        <img src="assets/images/manga-selo.svg" alt="logo da manguinha">
+        <p>fruta não precisa ser bonita.</p>
+        <nav>
+        <a href="#">Como funciona</a>
+        <a href="#">Termos de uso</a>
+        <a href="#">Privacidade</a>
+        <a href="#">Sobre</a>
+        <a href="#">Imprensa</a>
+        <a href="#">Ajuda</a>
+        <a href="#">Contato</a>
+        <p>© 2026 Imperfruta</p>
+        </nav>
+    </footer>
+
+    
+<script src="assets/js/chat.js" defer></script>
+
 </body>
+
 </html>

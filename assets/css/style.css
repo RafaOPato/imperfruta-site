@@ -1,3 +1,930 @@
-h1{
-    color: blueviolet;
+/* Letras do Google Fonts. O @import tem que ficar no começo do arquivo */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+
+/* ---------- A PÁGINA TODA ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f8f7f2;
+    color: #18261c;
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Títulos com a letra bem estreita */
+h1,
+h2,
+h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 75;
+    font-weight: 800;
+    color: #173b26;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 52px;
+    letter-spacing: -1px;
+}
+
+br {
+    display: none;
+}
+
+section {
+    padding: 40px 48px;
+}
+
+
+/* ---------- CABEÇALHO ---------- */
+
+header {
+    height: 72px;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 7px;
+}
+
+.logo a {
+    display: flex;
+    text-decoration: none;
+}
+
+.logo h1 {
+    font-size: 26px;
+    letter-spacing: 0;
+    font-variation-settings: "wdth" 82;
+}
+
+.h1 {
+    color: #173b26;
+}
+
+.h2 {
+    color: #ff6a14;
+}
+
+/* o menu ocupa o meio e empurra os botões para o fim */
+nav {
+    flex: 1;
+    display: flex;
+    gap: 6px;
+}
+
+nav a {
+    padding: 9px 14px;
+    color: #173b26;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.btn-entrar {
+    margin-right: 16px;
+    color: #173b26;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #ff6a14;
+    text-underline-offset: 4px;
+}
+
+.btn-cconta {
+    display: inline-block;
+    background: #173b26;
+    color: #f8f7f2;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* ---------- PRIMEIRA TELA ---------- */
+
+.hero {
+    padding: 56px 48px 72px;
+}
+
+.hero h1 {
+    max-width: 820px;
+    font-size: 104px;
+    letter-spacing: -2px;
+    line-height: 0.95;
+}
+
+.hero p {
+    max-width: 520px;
+    margin: 32px 0 28px;
+    font-size: 17px;
+    color: #4a5a4f;
+}
+
+.hero a {
+    margin-right: 24px;
+    color: #173b26;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #ff6a14;
+    text-underline-offset: 4px;
+}
+
+.hero .btn-cconta {
+    padding: 14px 24px;
+    color: #f8f7f2;
+    text-decoration: none;
+}
+
+
+/* ---------- NA FEIRA HOJE ---------- */
+
+.quadro {
+    position: relative;
+    margin: 24px 48px;
+    padding: 48px;
+    background: #173b26;
+    border-radius: 28px;
+    color: #f8f7f2;
+}
+
+.quadro h2 {
+    color: #f8f7f2;
+    font-size: 56px;
+}
+
+.quadro p {
+    max-width: 420px;
+    margin: 8px 0 28px;
+    font-size: 13px;
+    color: #b9c9bb;
+}
+
+/* o botão laranja fica no canto de cima */
+.quadro a {
+    position: absolute;
+    top: 52px;
+    right: 48px;
+    background: #ff6a14;
+    color: #173b26;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.linha-lote {
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(248, 247, 242, .18);
+}
+
+.nome {
+    width: 24%;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.defeito {
+    width: 26%;
+    font-size: 12px;
+    color: #b9c9bb;
+}
+
+.onde {
+    width: 20%;
+    font-size: 12px;
+    color: #b9c9bb;
+}
+
+.kg {
+    width: 14%;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 75;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.preco {
+    width: 16%;
+    text-align: right;
+    font-family: "Permanent Marker", cursive;
+    font-size: 18px;
+    color: #ff6a14;
+}
+
+
+/* ---------- QUEM PLANTA E QUEM PROCESSA ---------- */
+
+.pai {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.lado-esquerdo,
+.lado-direito {
+    flex: 1;
+}
+
+.pai h3 {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-variation-settings: normal;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.foto {
+    display: block;
+}
+
+.recorte-b {
+    border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%;
+}
+
+.foto-meio {
+    flex: none;
+    width: 290px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.elementos {
+    margin-top: 26px;
+}
+
+.elementos b {
+    display: block;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 75;
+    font-weight: 800;
+    font-size: 32px;
+    color: #ff6a14;
+}
+
+.elementos p {
+    max-width: 280px;
+    font-size: 13px;
+    color: #4a5a4f;
+}
+
+
+/* ---------- FAIXA LARANJA COM AS FRUTAS ---------- */
+
+.faixa {
+    margin: 40px 0;
+    padding: 18px 0;
+    background: #ff6a14;
+    overflow: hidden;
+}
+
+.fila {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.rolo {
+    display: flex;
+    width: max-content;
+    animation: rolar 30s linear infinite;
+}
+
+.copia {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-right: 28px;
+}
+
+.copia span {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 75;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #173b26;
+}
+
+.fruto {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #173b26;
+}
+
+@keyframes rolar {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* ---------- SEM SURPRESA NA HORA DE RETIRAR ---------- */
+
+.principal-manga {
+    overflow: hidden;
+}
+
+/* a foto grande fica à esquerda e o texto corre do lado direito */
+.principal-manga img {
+    float: left;
+    width: 46%;
+    margin-right: 6%;
+    border-radius: 24px;
+}
+
+.principal-manga h2 {
+    margin: 70px 0 32px;
+    font-size: 48px;
+}
+
+.topicos-manga {
+    position: relative;
+    padding-left: 64px;
+    margin-bottom: 24px;
+}
+
+/* os ícones vêm depois da foto para ganhar dela */
+.topicos-manga img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    float: none;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 11px;
+    background: #ffe0c6;
+    border-radius: 50%;
+}
+
+.topicos-manga b {
+    display: block;
+    font-size: 17px;
+}
+
+.topicos-manga p {
+    font-size: 13px;
+    color: #4a5a4f;
+}
+
+
+/* ---------- TEM FRUTA PARADA NO PÉ ---------- */
+
+.pai-final-site {
+    padding: 56px;
+    background: #ff6a14;
+    border-radius: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.esquerdo-final {
+    max-width: 520px;
+}
+
+.esquerdo-final h2 {
+    font-size: 68px;
+}
+
+.esquerdo-final p {
+    margin: 22px 0 26px;
+    color: #173b26;
+}
+
+.esquerdo-final a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 11px 20px;
+    border: 2px solid #173b26;
+    border-radius: 10px;
+    color: #173b26;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.esquerdo-final .btn-cconta {
+    background: #173b26;
+    color: #f8f7f2;
+}
+
+.direito-final {
+    display: flex;
+    gap: 12px;
+}
+
+.direito-final img {
+    width: 210px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* ---------- RODAPÉ ---------- */
+
+footer {
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 1.5px solid #dcd9cc;
+}
+
+footer img {
+    width: 30px;
+}
+
+footer p {
+    font-size: 12px;
+    color: #5f6d62;
+}
+
+footer nav {
+    margin-left: auto;
+    align-items: center;
+    gap: 22px;
+}
+
+footer nav a {
+    padding: 0;
+    font-size: 12px;
+}
+
+
+/* ---------- TELAS MENORES ---------- */
+
+@media (max-width: 900px) {
+
+    header {
+        height: auto;
+        padding: 12px 20px;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        flex: none;
+        overflow-x: auto;
+    }
+
+    section {
+        padding: 32px 20px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .quadro {
+        margin: 16px 20px;
+        padding: 28px 20px;
+    }
+
+    .quadro a {
+        position: static;
+        display: inline-block;
+        margin-bottom: 16px;
+    }
+
+    .defeito,
+    .onde {
+        display: none;
+    }
+
+    .nome {
+        width: 40%;
+    }
+
+    .kg {
+        width: 25%;
+    }
+
+    .preco {
+        width: 35%;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    .pai,
+    .pai-final-site {
+        flex-direction: column;
+    }
+
+    .pai-final-site {
+        padding: 32px 24px;
+    }
+
+    .esquerdo-final h2 {
+        font-size: 44px;
+    }
+
+    .direito-final img {
+        width: 140px;
+        height: 160px;
+    }
+
+    .principal-manga img {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px;
+    }
+
+    .topicos-manga img {
+        width: 44px;
+        margin: 0;
+    }
+
+    .principal-manga h2 {
+        margin-top: 0;
+    }
+
+    .copia span {
+        font-size: 44px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        padding: 24px 20px;
+    }
+
+    footer nav {
+        margin-left: 0;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ---------- CONVERSA COM O MANGUINHA ---------- */
+/* O chat.js monta o botão redondo e a janela. O visual deles fica aqui */
+
+/* Os botões do chat usam a mesma letra da página */
+button {
+    font: inherit;
+}
+
+.mg-botao {
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    z-index: 900;
+    width: 74px;
+    height: 74px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #173b26;
+    box-shadow: 0 14px 28px -10px rgba(10, 30, 15, .6);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform .18s;
+}
+
+.mg-botao:hover {
+    transform: translateY(-3px) rotate(-4deg);
+}
+
+.mg-botao img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.mg-botao em {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 99px;
+    background: #ff6a14;
+    border: 3px solid #f8f7f2;
+}
+
+.mg-convite {
+    position: fixed;
+    right: 24px;
+    bottom: 110px;
+    z-index: 900;
+    background: #d6ad73;
+    color: #18261c;
+    font-family: "Permanent Marker", "Comic Sans MS", cursive;
+    font-size: 17px;
+    padding: 9px 15px 7px;
+    border-radius: 6px 9px 5px 10px;
+    box-shadow: 0 10px 18px -12px rgba(70, 45, 10, .8);
+    transform: rotate(-3deg);
+}
+
+.mg-convite b {
+    position: absolute;
+    right: 26px;
+    bottom: -6px;
+    width: 12px;
+    height: 12px;
+    background: #d6ad73;
+    transform: rotate(45deg);
+}
+
+.mg-convite button {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 22px;
+    height: 22px;
+    border: none;
+    border-radius: 99px;
+    background: #173b26;
+    color: #f8f7f2;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.mg-janela {
+    position: fixed;
+    right: 26px;
+    bottom: 112px;
+    z-index: 901;
+    width: 390px;
+    max-width: calc(100vw - 32px);
+    height: min(600px, calc(100vh - 150px));
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    background: #f8f7f2;
+    border: 2px solid #173b26;
+    border-radius: 26px 32px 24px 30px/30px 24px 32px 26px;
+    box-shadow: 0 30px 60px -28px rgba(10, 30, 15, .65);
+}
+
+.mg-janela.aberta {
+    display: flex;
+}
+
+.mg-topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #173b26;
+    color: #f8f7f2;
+}
+
+.mg-topo img {
+    width: 46px;
+    height: 46px;
+    flex: none;
+}
+
+.mg-topo b {
+    display: block;
+    font-family: "Bricolage Grotesque", "Schibsted Grotesk", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 1.1;
+}
+
+.mg-topo small {
+    font-size: 12.5px;
+    color: #aac3ae;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mg-topo small i {
+    width: 7px;
+    height: 7px;
+    border-radius: 99px;
+    background: #86b83a;
+    display: inline-block;
+}
+
+.mg-topo button {
+    margin-left: auto;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 99px;
+    background: rgba(248, 247, 242, .14);
+    color: #f8f7f2;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.mg-conversa {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 16px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mg-fala {
+    max-width: 88%;
+    font-size: 14.8px;
+    line-height: 1.45;
+    padding: 12px 15px;
+    border-radius: 18px 20px 18px 6px;
+    background: #fffefa;
+    border: 1.5px solid #dcd9cc;
+    color: #18261c;
+}
+
+.mg-fala.eu {
+    align-self: flex-end;
+    background: #173b26;
+    color: #f8f7f2;
+    border-color: #173b26;
+    border-radius: 20px 18px 6px 18px;
+}
+
+.mg-fala b {
+    font-weight: 700;
+}
+
+.mg-fala .mg-ir {
+    display: inline-flex;
+    margin-top: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #173b26;
+    background: #ffe0c6;
+    padding: 9px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.mg-pensando {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 14px 16px;
+}
+
+.mg-pensando span {
+    width: 7px;
+    height: 7px;
+    border-radius: 99px;
+    background: #5f6d62;
+    animation: mgp 1s infinite;
+}
+
+.mg-pensando span:nth-child(2) {
+    animation-delay: .16s;
+}
+
+.mg-pensando span:nth-child(3) {
+    animation-delay: .32s;
+}
+
+@keyframes mgp {
+    0%,
+    60%,
+    100% {
+        opacity: .25;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+
+.mg-sugestoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 0 16px 12px;
+}
+
+.mg-sugestoes button {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #173b26;
+    background: #dfe8d3;
+    border: 1.5px solid transparent;
+    border-radius: 999px;
+    padding: 8px 13px;
+    cursor: pointer;
+}
+
+.mg-sugestoes button:hover {
+    border-color: #173b26;
+}
+
+.mg-baixo {
+    display: flex;
+    gap: 8px;
+    padding: 12px 14px;
+    border-top: 1.5px solid #dcd9cc;
+    background: #fffefa;
+}
+
+.mg-baixo input {
+    flex: 1;
+    min-width: 0;
+    font-family: inherit;
+    font-size: 15px;
+    color: #18261c;
+    background: #f8f7f2;
+    border: 1.5px solid #c9c5b3;
+    border-radius: 999px;
+    padding: 12px 16px;
+}
+
+.mg-baixo input:focus {
+    outline: none;
+    border-color: #173b26;
+    box-shadow: 0 0 0 3px rgba(255, 106, 20, .25);
+}
+
+.mg-baixo button {
+    flex: none;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 99px;
+    background: #ff6a14;
+    color: #173b26;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.mg-rodape {
+    font-size: 11.5px;
+    color: #5f6d62;
+    text-align: center;
+    padding: 0 16px 10px;
+    background: #fffefa;
+}
+
+@media (max-width: 520px) {
+
+    .mg-janela {
+        right: 12px;
+        left: 12px;
+        width: auto;
+        bottom: 96px;
+        height: min(560px, calc(100vh - 128px));
+    }
+
+    .mg-botao {
+        right: 16px;
+        bottom: 16px;
+        width: 64px;
+        height: 64px;
+    }
+
+    .mg-convite {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mg-botao,
+    .mg-pensando span {
+        transition: none;
+        animation: none;
+    }
 }
