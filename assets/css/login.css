@@ -5,6 +5,7 @@
 }
 
 body {
+  overflow: hidden;
   font-family: Arial, sans-serif;
   color: #1a3626;
 }
@@ -23,6 +24,19 @@ a {
   background-color: #1a3626;
   color: #f1efe9;
   padding: 45px 50px;
+}
+
+.logo-area {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.logo-imperfruta {
+  width: 65px;
+  height: 65px;
 }
 
 .logo {
