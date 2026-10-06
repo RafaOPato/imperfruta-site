@@ -497,3 +497,122 @@ button {
         animation: none;
     }
 }
+
+/* Imperfruta - Lote 0412 (versão para computador) */
+
+/* tira as margens padrão de tudo */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { background: #f2f1ea; color: #1b1b18; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; }
+h1, h2, h3 { font-family: 'Bricolage Grotesque', Arial, sans-serif; color: #163d2b; letter-spacing: -1px; }
+a { text-decoration: none; }
+button { font-family: 'DM Sans', Arial, sans-serif; cursor: pointer; }
+
+/* ---------- TOPO ---------- */
+.topo { display: flex; align-items: center; padding: 14px 40px; background: #f8f8f3; border-bottom: 1px solid #e1e0d6; }
+.logo { font-family: 'Bricolage Grotesque', Arial, sans-serif; font-weight: 800; font-size: 22px; color: #163d2b; margin-right: 24px; }
+.logo span { color: #e8641b; }
+.menu { color: #333; padding: 8px 14px; border-radius: 20px; font-weight: 500; }
+.menu.ativo { background: #dfe9d6; color: #163d2b; }
+.usuario { margin-left: auto; display: flex; align-items: center; gap: 10px; font-size: 12px; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; background: #fbe3d3; text-align: center; line-height: 36px; font-weight: bold; font-size: 12px; }
+
+/* ---------- ESTRUTURA ---------- */
+.pagina { width: 1200px; margin: 0 auto; padding-bottom: 80px; }
+.caminho { padding: 20px 0 16px; font-size: 12px; color: #6b6b62; }
+.colunas { display: flex; gap: 40px; align-items: flex-start; }
+.esquerda { width: 760px; }
+.direita { width: 400px; }
+
+/* textos pequenos que se repetem */
+.obs { font-size: 12px; color: #6b6b62; margin: 2px 0; }
+.pequeno { font-size: 10px; font-weight: bold; }
+.laranja { color: #e8641b; }
+.verde { color: #2c5a2a; }
+.linha { display: flex; justify-content: space-between; align-items: center; }
+
+/* ---------- COLUNA DA ESQUERDA ---------- */
+.foto-grande { height: 440px; border-radius: 22px; background-color: #d9661a;
+  background-image: radial-gradient(circle at 20% 30%, #f7a23f 0 9%, transparent 10%), radial-gradient(circle at 60% 20%, #ee8a25 0 10%, transparent 11%), radial-gradient(circle at 80% 60%, #f39a32 0 11%, transparent 12%), radial-gradient(circle at 35% 75%, #e9781c 0 10%, transparent 11%), radial-gradient(circle at 55% 55%, #f5a03a 0 9%, transparent 10%);
+  background-size: 110px 110px, 140px 140px, 120px 120px, 130px 130px, 100px 100px; }
+.miniaturas { display: flex; gap: 12px; margin: 12px 0 10px; }
+.mini { flex: 1; height: 100px; border-radius: 14px; border: 2px solid transparent; }
+.mini.escolhida { border-color: #e8641b; }
+.mini1 { background: radial-gradient(circle, #f39a32 0 30%, #e9781c 31% 60%, transparent 61%) 0 0 / 28px 28px, #d9661a; }
+.mini2 { background: radial-gradient(circle at 40% 50%, #f08a25 0 22%, transparent 23%), linear-gradient(#3f6b2a, #2c5320); }
+.mini3 { background: radial-gradient(circle at 40% 60%, #ee6a2a 0 12%, transparent 13%), linear-gradient(#a9b98b, #6c8a4c); }
+.mini4 { background: radial-gradient(circle at 75% 40%, #e9701c 0 40%, transparent 41%), linear-gradient(120deg, #f6a53a, #f19a2f); }
+.legenda { font-size: 12px; color: #6b6b62; margin-bottom: 36px; }
+
+h2 { font-size: 28px; margin-bottom: 14px; }
+h2.espaco { margin-top: 40px; }
+.depoimento { display: flex; gap: 18px; }
+.aspas { font-family: 'Bricolage Grotesque', serif; font-size: 60px; font-weight: 800; font-style: italic; color: #e8641b; line-height: 50px; }
+.depoimento p { font-size: 21px; font-weight: 500; line-height: 28px; }
+.autor { margin: 12px 0 12px 62px; font-size: 12px; color: #6b6b62; }
+.etiqueta { display: inline-block; margin: 0 6px 0 62px; padding: 6px 12px; border: 1px solid #e1e0d6; background: #f8f8f3; border-radius: 20px; font-size: 12px; font-weight: bold; }
+.etiqueta + .etiqueta { margin-left: 0; }
+
+/* ficha do lote: 3 colunas */
+.ficha { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.caixa { background: #f8f8f3; border: 1px solid #e1e0d6; border-radius: 14px; padding: 20px 18px 16px; }
+.rotulo { font-size: 11px; font-weight: bold; }
+.valor { font-family: 'Anton', Arial, sans-serif; font-size: 30px; color: #163d2b; line-height: 44px; }
+
+/* na mesma viagem: 3 colunas */
+.viagem { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.caixa-viagem { display: flex; align-items: center; gap: 12px; background: #f8f8f3; border: 1px solid #e1e0d6; border-radius: 14px; padding: 10px; }
+.bolinha { width: 52px; height: 52px; border-radius: 50%; }
+.bolinha1 { background: radial-gradient(circle, #c9d06a 0 35%, #7b9a52 36%); }
+.bolinha2 { background: radial-gradient(circle at 40% 55%, #e9b8c4 0 25%, #2b2b2b 26%); }
+.bolinha3 { background: radial-gradient(circle at 40% 50%, #ee6a2a 0 28%, #8aa35e 29%); }
+.valor-pequeno { font-family: 'Anton', Arial, sans-serif; font-size: 20px; color: #163d2b; }
+
+/* ---------- COLUNA DA DIREITA ---------- */
+.cartao { background: #f8f8f3; border: 1px solid #e1e0d6; border-radius: 20px; padding: 22px; margin-bottom: 16px; }
+.cartao h1 { font-size: 34px; line-height: 36px; margin: 14px 0 10px; }
+.cartao h3 { font-size: 20px; }
+.selo { font-family: 'Anton', Arial, sans-serif; font-size: 18px; color: #e8641b; border: 2px solid #e8641b; border-radius: 4px; padding: 2px 9px; display: inline-block; transform: rotate(-2deg); }
+.status { background: #dfe9d6; color: #2c5a2a; border: 1px solid #c3d7b6; border-radius: 20px; padding: 4px 10px; font-size: 11px; font-weight: bold; }
+
+.linha-preco { display: flex; align-items: center; gap: 16px; margin: 18px 0 22px; }
+.etiqueta-preco { background: #cfa970; border-radius: 6px; padding: 14px 20px; text-align: center; color: #2a1d0c; transform: rotate(-3deg); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+.preco-grande { font-family: 'Bricolage Grotesque', Arial, sans-serif; font-weight: 800; font-size: 42px; line-height: 44px; }
+.desconto { display: inline-block; margin-top: 8px; background: #fbe3d3; color: #e8641b; font-weight: bold; font-size: 11px; border-radius: 20px; padding: 4px 10px; }
+
+.seletor { display: flex; gap: 10px; margin-top: 10px; }
+.botao-quadrado { width: 52px; height: 52px; border: 1px solid #e1e0d6; background: white; border-radius: 14px; font-size: 22px; }
+.campo { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; border: 2px solid #163d2b; border-radius: 14px; background: white; color: #6b6b62; }
+.campo b { color: #1b1b18; font-size: 20px; }
+.atalhos { display: flex; gap: 8px; margin: 14px 0 18px; }
+.atalho { border: 1px solid #e1e0d6; background: white; border-radius: 20px; padding: 6px 11px; font-size: 11px; font-weight: bold; }
+.atalho.escolhido { background: #163d2b; color: white; border-color: #163d2b; }
+
+.calculo { border-top: 1px dashed #cfcdc0; padding-top: 14px; }
+.calculo .linha { margin-bottom: 9px; font-size: 12px; }
+.calculo .total { font-size: 15px; font-weight: bold; }
+.botao-pedido { width: 100%; margin-top: 12px; background: #163d2b; color: white; border: none; border-radius: 12px; padding: 15px; font-size: 14px; font-weight: bold; }
+.botao-pedido:hover { background: #0f2e1f; }
+.seguranca { margin-top: 14px; }
+
+/* produtor */
+.produtor { display: flex; gap: 14px; align-items: center; margin-bottom: 14px; }
+.foto-produtor { width: 52px; height: 52px; border-radius: 50%; background: radial-gradient(circle at 40% 50%, #ee6a2a 0 25%, transparent 26%), #7b9a52; }
+.botao-link { border: 1.5px solid #163d2b; color: #163d2b; border-radius: 20px; padding: 7px 12px; font-size: 12px; font-weight: bold; }
+.link-denuncia { color: #1b1b18; font-size: 12px; font-weight: bold; border-bottom: 2px solid #e8641b; }
+
+/* ---------- MAPA (feito só com divs) ---------- */
+.mapa { position: relative; height: 200px; background: #e6e5de; border-radius: 14px; margin: 14px 0 16px; overflow: hidden; }
+.quadra { position: absolute; background: #dad9d0; border-radius: 6px; }
+.quadra.verde-q { background: #d3dccb; }
+.rua { position: absolute; background: #f7f6f1; }
+.rua.fina { background: #efeee8; }
+.bairro { position: absolute; font-size: 9px; color: #7a7a72; text-align: center; line-height: 11px; }
+.area { position: absolute; left: 50%; top: 50%; width: 130px; height: 130px; margin-left: -65px; margin-top: -65px; border: 2px dashed #e8641b; border-radius: 50%; background: rgba(232, 100, 27, 0.18); }
+.pino { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #163d2b; color: white; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 20px; white-space: nowrap; }
+.creditos { position: absolute; right: 8px; bottom: 5px; font-size: 8px; color: #8a8a82; }
+.info-titulo { font-size: 13px; font-weight: bold; margin-top: 12px; }
+.info { margin-left: 22px; }
+
+/* ---------- MASCOTE ---------- */
+.mascote { position: fixed; right: 24px; bottom: 24px; width: 60px; height: 60px; border-radius: 50%; background: #163d2b; text-align: center; line-height: 60px; font-size: 30px; box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
