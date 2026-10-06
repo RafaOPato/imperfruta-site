@@ -60,7 +60,7 @@ O nome junta as palavras **imperfeita** e **fruta**.
 
 | Para quem | O que ganha |
 |---|---|
-| **Quem planta** | Vende a fruta que ia perder. Anuncia de graça e recebe o preço cheio que pediu. |
+| **Quem planta** | Vende a fruta que ia perder. Anuncia de graça e recebe o valor do lote menos 5%. |
 | **Quem processa** | Acha fruta boa para a produção, direto do produtor, escolhendo a região, a quantidade e o defeito. |
 | **Todo mundo** | Menos fruta boa no lixo. |
 
@@ -98,7 +98,7 @@ No desenho, o verde é o que o produtor faz, o dourado é o que a indústria faz
 - **O pagamento vem antes.** A indústria paga no fechamento do pedido e o dinheiro fica guardado.
 - **O código de retirada.** O motorista chega ao sítio com um código. O produtor confere a carga, digita o código e o Pix é liberado na hora.
 - **Se der errado, ninguém perde.** Se o caminhão não aparecer ou o produtor recusar, o dinheiro volta para a indústria e a fruta continua com o produtor.
-- **O preço é do produtor.** A indústria paga 6% de taxa em cada compra. O produtor não paga para anunciar.
+- **O preço do lote é do produtor.** O comprador paga 10% a mais e o produtor recebe o valor do lote menos 5%. Anunciar é de graça.
 - **O frete é de quem compra.** O caminhão da indústria busca a fruta no pomar.
 
 ## As telas

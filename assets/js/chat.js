@@ -5,7 +5,7 @@ const ZAP = "(11) 9002-8922";
 const SABER = [
     {
         chaves: ["taxa", "comissão", "comissao", "quanto custa", "custo", "cobra", "cobram", "porcentagem", "%"],
-        diz: "Pra quem vende, nada: você recebe o preço cheio que anunciou. A Imperfruta cobra <b>de 5% a 8% do comprador</b> sobre o pedido fechado. Lote parado não paga nada: sem mensalidade e sem taxa de anúncio."
+        diz: "Anunciar é de graça. Quem compra paga <b>10% a mais</b> que o valor do lote e do vendedor a Imperfruta desconta <b>5% do valor do lote</b>. Exemplo: num lote de R$ 1.000, o comprador paga R$ 1.100 e o vendedor recebe R$ 950. Lote parado não paga nada: sem mensalidade e sem taxa de anúncio."
     },
     {
         chaves: ["como funciona", "como que funciona", "o que é", "o que e isso", "explica", "funciona"],
@@ -18,7 +18,7 @@ const SABER = [
     },
     {
         chaves: ["quando recebo", "recebo", "prazo", "pagamento", "pix", "receber", "dinheiro", "pago"],
-        diz: "Na hora da retirada. Você digita o código que o motorista mostra e o Pix cai na sua conta no mesmo minuto, sem boleto de 30 dias, sem desconto depois."
+        diz: "Na hora da retirada. Você digita o código que o motorista mostra e o Pix cai na sua conta no mesmo minuto, sem boleto de 30 dias. O valor é o do lote menos os 5% da plataforma."
     },
     {
         chaves: ["fruta feia", "fora do padrão", "fora do padrao", "defeito", "mancha", "torta", "posso anunciar", "serve", "aceita"],
