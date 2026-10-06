@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imperfruta - Login</title>
     <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/acessibilidade.css">
 </head>
 <body>
 
@@ -13,14 +14,14 @@
 
         <section class="lado-esquerdo">
             <div class="logo-area">
-                <img src="/assets/images/manga.svg" alt="Logo da Imperfruta" class="logo-imperfruta">
+                <img src="../assets/images/manga.svg" alt="Logo da Imperfruta" class="logo-imperfruta">
                 <p class="logo">imper<span>fruta</span></p>
             </div>
 
             <div class="foto-area">
                 <div class="circulo-laranja">
                 </div>
-                <img src="/assets/images/img.foto.recorte-a.png" alt="Diversas laranjas juntas">
+                <img src="../assets/images/img.foto.recorte-a.png" alt="Diversas laranjas juntas">
                 <p class="selo">Anunciar é grátis</p>
             </div>
             <h1>Entre na <span>feira.</span></h1>
@@ -54,7 +55,8 @@
                     </div>
                 </div>
 
-                <a class="esqueci" href="#">Esqueci a senha</a>
+                <a class="esqueci" href="recuperarsenha.html">Esqueci a senha</a>
+                <p class="erro-login" id="erro" hidden>Login ou senha incorretos.</p>
                 <button class="botao-entrar" type="submit">Entrar <span aria-hidden="true">→</span></button>
 
                 <p class="ou">ou</p>
@@ -70,9 +72,26 @@
 
             </form>
 
+            <div class="logins-teste">
+                <div class="caixa-teste">
+                    <b>Login produtor</b>
+                    <span id="mostra-login-produtor"></span>
+                    <span id="mostra-senha-produtor"></span>
+                </div>
+                <div class="caixa-teste">
+                    <b>Login empresa</b>
+                    <span id="mostra-login-industria"></span>
+                    <span id="mostra-senha-industria"></span>
+                </div>
+            </div>
+
         </section>
     </main>
 
+    <script src="../assets/js/login.js" defer></script>
+    <script src="../assets/js/chat.js" defer></script>
+
+    <script src="../assets/js/acessibilidade.js" defer></script>
 </body>
 
 </html>

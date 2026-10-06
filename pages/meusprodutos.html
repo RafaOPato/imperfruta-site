@@ -3,34 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus lotes - ImperFruta</title>
+    <title>Imperfruta - Meus lotes</title>
     <link rel="stylesheet" href="../assets/css/meusprodutos.css">
+    <link rel="stylesheet" href="../assets/css/acessibilidade.css">
 </head>
-<body>
-    <header>
-        <a class="logo" href="../index.html">
-            <img src="../assets/images/manga.svg" alt="logo da manguinha">
-            imper<span>fruta</span>
-        </a>
+<body class="grao pagina-meus-lotes">
 
+    <header class="topo">
+        <a class="marca" href="../index.html">
+            <img class="manguinha" src="../assets/images/manga.svg" alt="">
+            <b>imper<i>fruta</i></b>
+        </a>
         <nav>
             <a class="ativo" href="meusprodutos.html">Meus lotes</a>
             <a href="pedidosrecebidos.html">Pedidos recebidos</a>
             <a href="#">Recebimentos</a>
             <a href="#">Quem está comprando</a>
         </nav>
-
-        <div class="perfil">
-            <img src="../assets/images/notificacaoanunciolote.png" alt="notificações">
-            <span class="avatar">VS</span>
-            <p>
-                <b>Valdir Souza</b>
-                <small>Sítio Três Irmãs, Bebedouro SP</small>
-            </p>
+        <div class="direita">
+            <a class="sino" href="#" aria-label="Notificações">
+                <i class="ph ph-bell"></i>
+                <em></em>
+            </a>
+            <a class="conta" href="login.html">
+                <span class="avatar verde">VS</span>
+                <div><b>Valdir Souza</b><small>Sítio Três Irmãs, Bebedouro SP</small></div>
+                <i class="ph ph-caret-down"></i>
+            </a>
         </div>
     </header>
 
+    <section class="cab">
+        <div>
+            <h1 class="titulo">Bom dia, Valdir</h1>
+            <p>O que está no ar, o que já tem comprador e o que venceu — tudo na mesma tela.</p>
+        </div>
+        <a class="btn btn-laranja btn-g" href="anunciarlot.html"><i class="ph-bold ph-plus"></i>Anunciar lote</a>
+    </section>
+
+    <section class="alerta">
+        <span class="ico">
+            <i class="ph-fill ph-bell-ringing"></i>
+        </span>
+        <div>
+            <span class="rot"><i class="ph-fill ph-circle"></i>Pedido novo · há 12 min</span>
+            <b>Polpas Rio Pardo quer 3.000 kg da sua laranja pera</b>
+            <span class="prazo"><i class="ph-bold ph-hourglass-medium"></i>Responda até amanhã, 18h</span>
+        </div>
+        <div class="acoes">
+            <a class="btn btn-texto" href="pedidosrecebidos.html">Depois</a>
+            <a class="btn btn-mato" href="pedidosrecebidos.html">Ver pedido <i class="ph-bold ph-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section class="numeros">
+        <div><span>Lotes no ar</span><b>2</b></div>
+        <div><span>Quilos livres</span><b>7.400 kg</b></div>
+        <div class="eco"><span>Recebido em setembro</span><b>R$ 3.500</b></div>
+        <a class="btn btn-laranja" href="pedidosrecebidos.html">Ver pedidos <i class="ph-bold ph-arrow-right"></i></a>
+    </section>
+
+    <div class="grupo-titulo">
+        <h2 class="titulo">No ar agora</h2>
+        <span>2 lotes</span>
+    </div>
+
+    <div class="lista">
+        <article class="cartao lote-linha">
+            <div class="fr">
+                <img src="../assets/images/fotofeiralaranjapera.jpg" alt="">
+                <div><b>Laranja pera</b><span>Lote 0412 · mancha na casca</span></div>
+            </div>
+            <div class="col">
+                <span class="rot">Preço</span>
+                <b>R$ 0,78/kg</b>
+            </div>
+            <div class="kg">5.400 kg<small>3.000 reservados</small></div>
+            <div class="col">
+                <span class="rot">Retirar até</span>
+                <b>19/09/2026</b>
+            </div>
+            <div class="st"><span class="status ok"><i class="ph-bold ph-broadcast"></i>No ar</span><small>1 pedido esperando resposta</small></div>
+            <a class="btn btn-mato btn-p acao" href="pedidosrecebidos.html">Ver pedido</a>
+        </article>
+        <article class="cartao lote-linha">
+            <div class="fr">
+                <img src="../assets/images/fotomeusprodutoslimaotahiti.jpg" alt="">
+                <div><b>Limão tahiti</b><span>Lote 0418 · calibre misto</span></div>
+            </div>
+            <div class="col">
+                <span class="rot">Preço</span>
+                <b>R$ 1,10/kg</b>
+            </div>
+            <div class="kg">2.000 kg<small>nenhum reservado</small></div>
+            <div class="col">
+                <span class="rot">Retirar até</span>
+                <b>22/09/2026</b>
+            </div>
+            <div class="st"><span class="status ok"><i class="ph-bold ph-broadcast"></i>No ar</span><small>visto por 6 indústrias</small></div>
+            <a class="btn btn-borda btn-p acao" href="anunciarlot.html">Editar lote</a>
+        </article>
+    </div>
+
+    <div class="grupo-titulo">
+        <h2 class="titulo">Fechados e vencidos</h2>
+        <span>últimos 2</span>
+    </div>
+
+    <div class="lista">
+        <article class="cartao lote-linha apagado">
+            <div class="fr">
+                <img src="../assets/images/fotofeiralaranjavalencia.jpg" alt="">
+                <div><b>Laranja valência</b><span>Lote 0340 · Polpas Rio Pardo</span></div>
+            </div>
+            <div class="col">
+                <span class="rot">Preço</span>
+                <b>R$ 0,70/kg</b>
+            </div>
+            <div class="kg">5.000 kg<small>retirado em 05/09</small></div>
+            <div class="col">
+                <span class="rot">Você recebeu</span>
+                <b class="num">R$ 3.500,00</b>
+            </div>
+            <div class="st"><span class="status neutro"><i class="ph-bold ph-check"></i>Vendido</span><small>Pix caiu no mesmo dia</small></div>
+            <a class="btn btn-texto btn-p acao" href="anunciarlot.html">Anunciar igual</a>
+        </article>
+        <article class="cartao lote-linha apagado">
+            <div class="fr">
+                <img src="../assets/images/fotofecharpedidolaranja.jpg" alt="">
+                <div><b>Tangerina ponkan</b><span>Lote 0308 · maduro demais</span></div>
+            </div>
+            <div class="col">
+                <span class="rot">Preço</span>
+                <b>R$ 0,62/kg</b>
+            </div>
+            <div class="kg">800 kg<small>sem comprador</small></div>
+            <div class="col">
+                <span class="rot">Venceu em</span>
+                <b>08/09/2026</b>
+            </div>
+            <div class="st"><span class="status erro"><i class="ph-bold ph-clock-countdown"></i>Venceu</span><small>ficou 9 dias no ar</small></div>
+            <a class="btn btn-laranja btn-p acao" href="anunciarlot.html">Anunciar de novo</a>
+        </article>
+    </div>
+
+    <section class="zap">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+        <p>Não quer preencher nada? Manda foto e áudio no WhatsApp <b>(11) 9002-8922</b> que <u>a equipe anuncia o lote pra você</u> e te avisa quando aparecer pedido.</p>
+    </section>
+
+    <div class="espaco-fim"></div>
+
     <script src="../assets/js/chat.js" defer></script>
 
+    <script src="../assets/js/acessibilidade.js" defer></script>
 </body>
 </html>

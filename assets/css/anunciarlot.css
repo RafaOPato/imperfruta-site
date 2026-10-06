@@ -1,11 +1,7 @@
-/* Letras do Google Fonts. O @import tem que ficar no começo do arquivo */
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800&display=swap");
-
-
-/* ---------- A PÁGINA TODA ---------- */
 
 * {
     box-sizing: border-box;
@@ -19,28 +15,39 @@ body {
     font-family: "Schibsted Grotesk", sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    overflow-x: clip;
 }
 
-/* Títulos com a letra mais estreita */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: .16;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .09  0 0 0 0 .13  0 0 0 0 .08  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
 h1,
 h2,
 h3 {
     font-family: "Bricolage Grotesque", sans-serif;
-    font-variation-settings: "wdth" 86;
+    font-variation-settings: "wdth" 90, "opsz" 28;
     color: #173b26;
     line-height: 1.05;
 }
 
-
-/* ---------- CABEÇALHO ---------- */
-
 header {
+    position: relative;
+    z-index: 5;
     height: 72px;
     padding: 0 48px;
     display: flex;
     align-items: center;
     gap: 40px;
     border-bottom: 1.5px solid #dcd9cc;
+    background: #f8f7f2;
 }
 
 .logo {
@@ -49,14 +56,18 @@ header {
     color: #173b26;
     text-decoration: none;
     font-family: "Bricolage Grotesque", sans-serif;
-    font-variation-settings: "wdth" 82;
+    font-variation-settings: "wdth" 82, "opsz" 36;
     font-weight: 800;
     font-size: 25px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .logo img {
-    width: 40px;
-    margin-right: 7px;
+    width: 44px;
+    height: 44px;
+    margin: -5px 7px -5px 0;
 }
 
 .logo span {
@@ -78,27 +89,43 @@ nav a {
     white-space: nowrap;
 }
 
-/* O link da página em que a pessoa está */
-.ativo {
+nav a:hover {
+    color: #173b26;
+}
+
+.ativo,
+nav .ativo:hover {
     color: #173b26;
     background: #dfe8d3;
 }
 
-/* O sino, a bolinha com as iniciais e o nome vão para o fim da linha */
 .perfil {
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     font-size: 14px;
     line-height: 1.2;
 }
 
 .perfil img {
     width: 26px;
+    margin: 0 8px 0 7px;
+}
+
+.perfil::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin: -4px 0 0 4px;
+    border: solid #4a5a4f;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
 .avatar {
+    flex: none;
+    text-decoration: none;
     width: 40px;
     height: 40px;
     display: flex;
@@ -106,8 +133,9 @@ nav a {
     justify-content: center;
     background: #dfe8d3;
     color: #173b26;
+    font-size: 14px;
     font-weight: 800;
-    border-radius: 50%;
+    border-radius: 58% 42% 55% 45% / 47% 56% 44% 53%;
 }
 
 .perfil b,
@@ -120,20 +148,540 @@ nav a {
     font-size: 12px;
 }
 
-/* Cabeçalho em telas menores */
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 0 48px 64px;
+}
+
+.conteudo-principal {
+    flex: 1;
+    min-width: 0;
+}
+
+.resumo {
+    width: 420px;
+    padding-top: 186px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    column-gap: 7px;
+}
+
+.inicio {
+    height: 240px;
+    padding-top: 40px;
+}
+
+.inicio p {
+    margin-top: 10px;
+    max-width: 620px;
+    color: #4a5a4f;
+    font-size: 17px;
+}
+
+.inicio p:first-child {
+    margin-top: 0;
+    color: #5f6d62;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.inicio a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.inicio a:hover {
+    color: #173b26;
+}
+
+.inicio h1 {
+    margin-top: 8px;
+    font-size: 76px;
+    font-weight: 800;
+    font-variation-settings: "wdth" 84, "opsz" 48;
+    letter-spacing: -0.018em;
+    line-height: 1;
+    color: #173b26;
+}
+
+.principal {
+    margin-bottom: 22px;
+    padding: 28px 32px 30px;
+    background-color: #fffefa;
+    border: 1.5px solid #dcd9cc;
+    border-radius: 18px 22px 16px 24px / 20px 16px 22px 18px;
+}
+
+.principal h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.meio p,
+.oq-diferente p {
+    margin-top: 4px;
+    color: #4a5a4f;
+    font-size: 14px;
+}
+
+.meio p {
+    margin-bottom: 18px;
+}
+
+.pai-imagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.imagem-filho {
+    width: 148px;
+    height: 136px;
+}
+
+.imagem-filho img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px 30px 20px 28px / 28px 20px 30px 22px;
+}
+
+.imagem-filho:last-child img {
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.chips-fruta,
+.chips-clasifc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.marcar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 13px;
+    background: #fffefa;
+    border: 1.5px solid #c9c5b3;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.marcar input {
+    position: absolute;
+    opacity: 0;
+}
+
+.marcar:hover {
+    border-color: #173b26;
+}
+
+.marcar:has(input:checked) {
+    background-color: #173b26;
+    border-color: #173b26;
+    color: #f8f7f2;
+}
+
+.marcar:has(input:focus-visible) {
+    outline: 3px solid #ff6a14;
+}
+
+.chips-fruta .marcar:not(:last-child)::before {
+    content: "";
+    width: 18px;
+    height: 17px;
+    flex: none;
+    background-color: #ff7a1a;
+    background-image: radial-gradient(circle at 64% 58%, rgba(70, 35, 0, .30) 0 13%, transparent 14%), radial-gradient(circle at 36% 70%, rgba(70, 35, 0, .18) 0 7%, transparent 8%);
+    border-radius: 58% 42% 55% 45% / 47% 56% 44% 53%;
+}
+
+.chips-fruta .marcar:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 21px;
+    top: calc(50% - 11px);
+    width: 8px;
+    height: 4.5px;
+    background: #2f6a4a;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(-18deg);
+}
+
+.chips-fruta .marcar:nth-child(2)::before {
+    background-color: #86b83a;
+}
+
+.chips-fruta .marcar:nth-child(3)::before {
+    background-color: #f3b21b;
+}
+
+.chips-fruta .marcar:nth-child(4)::before {
+    background-color: #e5566f;
+}
+
+.chips-fruta .marcar:nth-child(5)::before {
+    background-color: #e3c93a;
+}
+
+.chips-clasifc .marcar:has(input:checked)::before {
+    content: "✓";
+    font-weight: bold;
+}
+
+.duas-colunas {
+    display: flex;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.duas-colunas > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.campo label,
+.qnt-qnt label,
+.Preco-kg label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: #18261c;
+}
+
+.entrada {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border: 1.5px solid #c9c5b3;
+    border-radius: 12px 15px 11px 14px / 14px 11px 15px 12px;
+    background-color: #fffefa;
+    color: #18261c;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.entrada[type="date"] {
+    padding-left: 44px;
+    background: #fffefa no-repeat 15px center / 19px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a4f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3.5' y='5' width='17' height='15.5' rx='2'/><path d='M3.5 10h17M8 3v4M16 3v4'/></svg>");
+}
+
+.entrada[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.entrada:focus {
+    outline: none;
+    border-color: #173b26;
+    box-shadow: 0 0 0 4px rgba(255, 106, 20, 0.28);
+}
+
+.qnt-qnt .campo,
+.Preco-kg .campo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    padding: 0 15px;
+    border: 1.5px solid #c9c5b3;
+    border-radius: 12px 15px 11px 14px / 14px 11px 15px 12px;
+    background-color: #fffefa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.qnt-qnt .campo:focus-within,
+.Preco-kg .campo:focus-within {
+    border-color: #173b26;
+    box-shadow: 0 0 0 4px rgba(255, 106, 20, 0.28);
+}
+
+.qnt-qnt .entrada,
+.Preco-kg .entrada {
+    flex: 1;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.qnt-qnt .entrada:focus,
+.Preco-kg .entrada:focus {
+    box-shadow: none;
+}
+
+.unidade {
+    color: #4a5a4f;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ajuda {
+    margin-top: 7px;
+    font-size: 12.5px;
+    color: #4a5a4f;
+}
+
+.dica {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 12px 15px 11px 14px / 14px 11px 15px 12px;
+    background-color: #ffe0c6;
+    font-size: 14.5px;
+    line-height: 1.4;
+}
+
+.dica-icone {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    font-size: 0;
+    background: #d9530a;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2a7 7 0 0 0-4 12.700V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.300A7 7 0 0 0 12 2zM9.500 19.500h5a1 1 0 0 1 0 2h-5a1 1 0 0 1 0-2z'/></svg>") center / contain no-repeat;
+}
+
+.resumo > img {
+    grid-column: 2;
+    width: 18px;
+}
+
+.lado-direito {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #2c7a3c;
+}
+
+.resumo > div {
+    grid-column: 1 / -1;
+}
+
+.meio-direita {
+    margin-top: 34px;
+    padding: 16px 22px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 6px;
+    background-color: #fffefa;
+    border: 1.5px solid #dcd9cc;
+    border-radius: 18px 22px 16px 24px / 20px 16px 22px 18px;
+}
+
+.meio-direita span,
+.meio-direita h2:first-of-type,
+.meio-direita h2:first-of-type + p {
+    width: 100%;
+}
+
+.meio-direita span {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #5f6d62;
+}
+
+.meio-direita img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 22px 30px 20px 28px / 28px 20px 30px 22px;
+}
+
+.meio-direita h2 {
+    margin-top: 14px;
+    font-size: 27px;
+    line-height: 1.5;
+}
+
+.meio-direita h2:nth-of-type(2) {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: "Big Shoulders Stencil Display", sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: .01em;
+}
+
+.meio-direita h2:nth-of-type(2) + p {
+    flex: 1 0 calc(100% - 140px);
+    margin: 0 0 0 4px;
+}
+
+.meio-direita p {
+    margin-top: 2px;
+    font-size: 14px;
+    color: #4a5a4f;
+}
+
+.meio-direita button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 8px 13px;
+    border: 1.5px solid #c9c5b3;
+    border-radius: 999px;
+    background-color: #fffefa;
+    color: #18261c;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.meio-direita button::before {
+    content: "✓";
+}
+
+.meio-direita-botao {
+    margin-top: 18px;
+}
+
+.meio-direita-botao button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 19px;
+    border: 1.5px solid transparent;
+    border-radius: 12px 15px 11px 14px / 14px 11px 15px 12px;
+    background-color: #173b26;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .22);
+    color: #f8f7f2;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.meio-direita-botao button::after {
+    content: "";
+    width: 19px;
+    height: 19px;
+    background: currentColor;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.600' stroke-linecap='round' stroke-linejoin='round'><path d='M4 12h16M13 5l7 7-7 7'/></svg>") center / contain no-repeat;
+}
+
+.meio-direita-botao button:hover {
+    filter: brightness(1.08);
+}
+
+.meio-direita-botao p {
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #4a5a4f;
+}
+
+.meio-direita-botao section {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 18px;
+    padding: 18px 20px;
+    border-radius: 18px 22px 16px 24px / 20px 16px 22px 18px;
+    background-color: #dfe8d3;
+    font-size: 14.5px;
+    line-height: 1.4;
+}
+
+.whats-foto {
+    flex: none;
+    width: 26px;
+    height: 26px;
+    margin: 2px 4px 0 0;
+}
+
+.whats-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.whats-texto u {
+    text-decoration-color: #ff6a14;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
 @media (max-width: 1150px) {
 
-    header {
-        padding: 0 32px;
+    header,
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .inicio {
+        height: 228px;
+        padding-top: 32px;
+    }
+
+    .resumo {
+        width: 360px;
+        padding-top: 178px;
+    }
+
+    .perfil p,
+    .perfil::after {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .inicio {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .resumo {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .meio-direita {
+        margin-top: 12px;
     }
 }
 
 @media (max-width: 800px) {
 
-    /* O menu desce para a linha de baixo */
+    header,
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    
     header {
         height: auto;
-        padding: 12px 16px 0;
+        padding-top: 12px;
         flex-wrap: wrap;
         gap: 4px 12px;
     }
@@ -145,28 +693,46 @@ nav a {
         padding-bottom: 10px;
     }
 
-    .perfil p {
-        display: none;
+    .inicio {
+        padding-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .inicio h1 {
+        font-size: 52px;
+    }
+
+    .principal {
+        padding: 22px 20px 24px;
+    }
+
+    .duas-colunas {
+        flex-direction: column;
+    }
+
+    .imagem-filho {
+        width: 112px;
+        height: 104px;
+    }
+
+    .container {
+        padding-bottom: 96px;
     }
 }
 
-
-/* ---------- O QUE JÁ ESTAVA NESTE ARQUIVO ---------- */
-
-h1{
-    color: green;
-    text-decoration: dashed;
-    margin: 30px;
-
-}
-
-
-/* ---------- CONVERSA COM O MANGUINHA ---------- */
-/* O chat.js monta o botão redondo e a janela. O visual deles fica aqui */
-
-/* Os botões do chat usam a mesma letra da página */
 button {
     font: inherit;
+}
+
+@media (max-width: 960px) {
+    header nav {
+        min-width: 0;
+        overflow-x: auto;
+    }
+
+    .perfil p {
+        display: none;
+    }
 }
 
 .mg-botao {
@@ -497,444 +1063,5 @@ button {
     .mg-pensando span {
         transition: none;
         animation: none;
-    }
-}
-
-
-:root {
-    --verde: #173b26;
-    --verde-escuro: #0f2a1b;
-    --verde-claro: #dfe8d3;
-    --verde-ok: #2f7d3b;
-    --creme: #fffefa;
-    --borda: #dcd9cc;
-    --borda-campo: #cfcbb9;
-    --texto-suave: #4a5a4f;
-    --cinza: #5f6d62;
-    --laranja: #ff6a14;
-    --laranja-claro: #ffdfc9;
-}
-
-
-/* ---------- DUAS COLUNAS: formulário à esquerda, resumo à direita ---------- */
-
-.container {
-    display: flex;
-    align-items: flex-start;
-    gap: 28px;
-    padding: 0 48px 64px;
-}
-
-.conteudo-principal {
-    flex: 1;
-}
-
-.resumo {
-    width: 330px;
-    padding-top: 160px;
-    text-align: right; /* só para o "Rascunho salvo agora" ir para a direita */
-}
-
-
-/* ---------- TÍTULO DA PÁGINA ---------- */
-
-.inicio {
-    height: 200px;
-    padding-top: 30px;
-}
-
-.inicio p {
-    margin-top: 10px;
-    max-width: 560px;
-    color: var(--texto-suave);
-}
-
-.inicio h1 {
-    width: auto;
-    height: auto;
-    margin: 10px 0;
-    font-size: 52px;
-    color: var(--verde);
-}
-
-
-/* ---------- CARTÕES BRANCOS ---------- */
-
-.principal {
-    background-color: var(--creme);
-    border: 1.5px solid var(--borda);
-    border-radius: 24px;
-    padding: 28px;
-    margin-bottom: 20px;
-}
-
-.principal h2 {
-    font-size: 26px;
-}
-
-.meio p,
-.oq-diferente p {
-    margin-top: 8px;
-    margin-bottom: 20px;
-    color: var(--texto-suave);
-}
-
-
-/* ---------- FOTOS ---------- */
-
-.pai-imagens {
-    display: flex;
-    gap: 12px;
-}
-
-.imagem-filho {
-    width: 150px;
-    height: 140px;
-}
-
-.imagem-filho img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-/* A última é o botão "Tirar foto", que já vem com a borda tracejada */
-.imagem-filho:last-child img {
-    object-fit: contain;
-    border-radius: 0;
-}
-
-
-/* ---------- CHIPS (as bolinhas de escolher) ---------- */
-
-.chips-fruta,
-.chips-clasifc {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 18px 0 24px;
-}
-
-.marcar {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1.5px solid var(--borda-campo);
-    border-radius: 999px;
-    padding: 10px 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-}
-
-/* Esconde a caixinha de marcar: quem aparece é o chip */
-.marcar input {
-    position: absolute;
-    opacity: 0;
-}
-
-.marcar:hover {
-    border-color: var(--verde);
-}
-
-/* Quando a pessoa clica, o chip fica verde-escuro com letra clara */
-.marcar:has(input:checked) {
-    background-color: var(--verde);
-    border-color: var(--verde);
-    color: #f8f7f2;
-}
-
-/* Contorno laranja quando navega com o teclado (Tab) */
-.marcar:has(input:focus-visible) {
-    outline: 3px solid var(--laranja);
-}
-
-/* Desenho de cada fruta (a última, "Outra fruta", fica sem) */
-.chips-fruta .marcar:not(:last-child)::before {
-    content: var(--icone);
-    font-size: 18px;
-    line-height: 1;
-}
-
-.chips-fruta .marcar:nth-child(1) { --icone: "🍊"; }  /* laranja */
-.chips-fruta .marcar:nth-child(2) { --icone: "🍋"; }  /* limão */
-.chips-fruta .marcar:nth-child(3) { --icone: "🥭"; }  /* manga */
-.chips-fruta .marcar:nth-child(4) { --icone: "🍐"; }  /* goiaba */
-.chips-fruta .marcar:nth-child(5) { --icone: "🍈"; }  /* maracujá */
-
-/* Visto (✓) que aparece nos chips de característica quando marcados */
-.chips-clasifc .marcar:has(input:checked)::before {
-    content: "✓";
-    font-weight: bold;
-}
-
-
-/* ---------- CAMPOS ---------- */
-
-.duas-colunas {
-    display: flex;
-    gap: 24px;
-    margin-top: 20px;
-}
-
-/* Cada metade ocupa o mesmo espaço */
-.duas-colunas > div {
-    flex: 1;
-}
-
-/* Rótulos em cima dos campos */
-.campo label,
-.qnt-qnt label,
-.Preco-kg label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    font-size: 14px;
-    color: var(--verde);
-}
-
-.entrada {
-    width: 100%;
-    height: 52px;
-    padding: 0 16px;
-    border: 1.5px solid var(--borda-campo);
-    border-radius: 14px;
-    background-color: var(--creme);
-    font-size: 16px;
-    font-family: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-/* Borda verde com brilho laranja ao clicar no campo */
-.entrada:focus {
-    outline: none;
-    border-color: var(--verde);
-    box-shadow: 0 0 0 3px rgba(255, 106, 20, 0.3);
-}
-
-/* Quantidade e Preço: a caixa é o .campo, o input fica sem borda dentro */
-.qnt-qnt .campo,
-.Preco-kg .campo {
-    display: flex;
-    align-items: center;
-    height: 52px;
-    padding: 0 16px;
-    border: 1.5px solid var(--borda-campo);
-    border-radius: 14px;
-    background-color: var(--creme);
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.qnt-qnt .campo:focus-within,
-.Preco-kg .campo:focus-within {
-    border-color: var(--verde);
-    box-shadow: 0 0 0 3px rgba(255, 106, 20, 0.3);
-}
-
-.qnt-qnt .entrada,
-.Preco-kg .entrada {
-    flex: 1;
-    height: 100%;
-    border: none;
-    background-color: transparent;
-}
-
-/* Dentro da caixa o brilho já é da caixa, então o input não precisa dele */
-.qnt-qnt .entrada:focus,
-.Preco-kg .entrada:focus {
-    box-shadow: none;
-}
-
-.prefixo,
-.unidade {
-    color: var(--cinza);
-}
-
-.ajuda {
-    margin-top: 8px;
-    font-size: 13px;
-    color: var(--cinza);
-}
-
-.dica {
-    display: flex;
-    gap: 12px;
-    margin-top: 20px;
-    padding: 16px 20px;
-    border-radius: 14px;
-    background-color: var(--laranja-claro);
-}
-
-.dica-icone {
-    font-size: 20px;
-}
-
-
-/* ---------- COLUNA DA DIREITA ---------- */
-
-/* "Rascunho salvo agora" com o visto ao lado */
-.resumo > img {
-    width: 18px;
-    vertical-align: middle;
-}
-
-.lado-direito {
-    display: inline-block;
-    margin-bottom: 15px;
-    font-weight: bold;
-    color: var(--verde-ok);
-}
-
-/* Cartão "Como vai aparecer na feira" */
-.meio-direita {
-    text-align: left;
-    padding: 20px;
-    background-color: var(--creme);
-    border: 1.5px solid var(--borda);
-    border-radius: 24px;
-}
-
-.meio-direita span {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: var(--texto-suave);
-}
-
-.meio-direita img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-.meio-direita h2 {
-    margin-top: 16px;
-    font-size: 26px;
-}
-
-/* O segundo h2 é o preço: fonte grande, e o "por quilo" fica ao lado */
-.meio-direita h2:nth-of-type(2) {
-    display: inline-block;
-    font-family: "Big Shoulders Stencil Display", sans-serif;
-    font-size: 48px;
-}
-
-.meio-direita h2:nth-of-type(2) + p {
-    display: inline-block;
-    margin-left: 8px;
-}
-
-.meio-direita p {
-    margin-top: 4px;
-    font-size: 14px;
-    color: var(--texto-suave);
-}
-
-/* Botões "Mancha na casca" e "Calibre misto" com o visto na frente */
-.meio-direita button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 16px;
-    margin-right: 6px;
-    padding: 9px 16px;
-    border: 1.5px solid var(--borda-campo);
-    border-radius: 999px;
-    background-color: transparent;
-    font-weight: 600;
-}
-
-.meio-direita button::before {
-    content: "✓";
-}
-
-/* Botão publicar, aviso e caixa do WhatsApp */
-.meio-direita-botao {
-    text-align: left;
-    margin-top: 20px;
-}
-
-.meio-direita-botao button {
-    width: 100%;
-    height: 56px;
-    border: none;
-    border-radius: 16px;
-    background-color: var(--verde);
-    color: #f8f7f2;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-/* Seta depois do texto "Publicar lote" */
-.meio-direita-botao button::after {
-    content: "  →";
-}
-
-.meio-direita-botao button:hover {
-    background-color: var(--verde-escuro);
-}
-
-.meio-direita-botao p {
-    margin: 16px 8px;
-    text-align: center;
-    font-size: 14px;
-    color: var(--cinza);
-}
-
-/* Caixa verde-clara do WhatsApp */
-.meio-direita-botao section {
-    display: flex;
-    gap: 12px;
-    padding: 16px 18px;
-    border-radius: 20px;
-    background-color: var(--verde-claro);
-}
-
-/* Sem fundo: a imagem aparece do jeito que ela é */
-.whats-foto {
-    width: 34px;
-    height: 34px;
-}
-
-.whats-foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-
-/* ---------- TELAS PEQUENAS ---------- */
-
-@media (max-width: 860px) {
-
-    .container {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 0 16px 96px;
-    }
-
-    .inicio {
-        height: auto;
-    }
-
-    .resumo {
-        width: 100%;
-        padding-top: 0;
-    }
-
-    .pai-imagens,
-    .duas-colunas {
-        flex-wrap: wrap;
-    }
-
-    .duas-colunas {
-        flex-direction: column;
     }
 }

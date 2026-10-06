@@ -1,11 +1,7 @@
-/* Letras do Google Fonts. O @import tem que ficar no começo do arquivo */
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800&display=swap");
-
-
-/* ---------- A PÁGINA TODA ---------- */
 
 * {
     box-sizing: border-box;
@@ -14,14 +10,13 @@
 }
 
 body {
-    background: #f8f7f2;
+    background: #f0f0ea;
     color: #18261c;
     font-family: "Schibsted Grotesk", sans-serif;
     font-size: 16px;
     line-height: 1.5;
 }
 
-/* Títulos com a letra mais estreita */
 h1,
 h2,
 h3 {
@@ -30,9 +25,6 @@ h3 {
     color: #173b26;
     line-height: 1.05;
 }
-
-
-/* ---------- CABEÇALHO ---------- */
 
 header {
     height: 72px;
@@ -78,13 +70,11 @@ nav a {
     white-space: nowrap;
 }
 
-/* O link da página em que a pessoa está */
 .ativo {
     color: #173b26;
     background: #dfe8d3;
 }
 
-/* O sino, a bolinha com as iniciais e o nome vão para o fim da linha */
 .perfil {
     margin-left: auto;
     display: flex;
@@ -99,6 +89,7 @@ nav a {
 }
 
 .avatar {
+    text-decoration: none;
     width: 40px;
     height: 40px;
     display: flex;
@@ -120,17 +111,32 @@ nav a {
     font-size: 12px;
 }
 
-/* Cabeçalho em telas menores */
 @media (max-width: 1150px) {
 
     header {
         padding: 0 32px;
+        gap: 16px;
+    }
+
+    nav a {
+        padding: 9px 10px;
+    }
+
+    .perfil p {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 960px) {
+
+    .perfil p {
+        display: none;
     }
 }
 
 @media (max-width: 800px) {
 
-    /* O menu desce para a linha de baixo */
+    
     header {
         height: auto;
         padding: 12px 16px 0;
@@ -138,30 +144,411 @@ nav a {
         gap: 4px 12px;
     }
 
-    nav {
+    header nav {
         order: 3;
         width: 100%;
         overflow-x: auto;
         padding-bottom: 10px;
     }
+}
 
-    .perfil p {
-        display: none;
+main {
+    padding: 0 48px 80px;
+}
+
+.top-row {
+    margin-top: 38px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 32px;
+    align-items: end;
+}
+
+h1 {
+    font-size: 72px;
+    font-weight: 800;
+}
+
+.top-row p {
+    margin-top: 10px;
+    color: #4a5a4f;
+    font-size: 17px;
+}
+
+.controls {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    gap: 12px;
+}
+
+.div-lupa {
+    width: 320px;
+    height: 48px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fffefa;
+    border: 1.5px solid #dcd9cc;
+    border-radius: 14px 17px 13px 18px;
+}
+
+.Lupa {
+    color: #173b26;
+    font-size: 20px;
+}
+
+.entrada {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 15px;
+    color: #18261c;
+}
+
+.seletora {
+    height: 48px;
+    padding: 0 12px;
+    background: #fffefa;
+    border: 1.5px solid #dcd9cc;
+    border-radius: 14px 17px 13px 18px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #18261c;
+}
+
+.banner {
+    margin-top: 32px;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background: #173b26;
+    border-radius: 28px 32px 26px 30px;
+}
+
+.stats {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr;
+}
+
+.stat {
+    padding: 0 32px;
+    border-left: 2px dashed #3f6a50;
+}
+
+.stat:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.stat small {
+    display: block;
+    color: #cfe3d6;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.stat strong {
+    display: block;
+    font-family: "Big Shoulders Stencil Display", sans-serif;
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 1.1;
+    white-space: nowrap;
+    color: #f8f7f2;
+}
+
+.stat:last-child strong {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-size: 44px;
+    color: #ff6a14;
+    transform: rotate(-3deg);
+    transform-origin: left center;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 16px 28px;
+    text-decoration: none;
+    background: #ff6a14;
+    border: 0;
+    border-radius: 12px 15px 11px 14px;
+    box-shadow: 0 4px 0 #b84a0a;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 17px;
+    color: #173b26;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.btn-primary::after {
+    content: " →";
+}
+
+section {
+    margin-top: 40px;
+}
+
+section h2 {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+section small,
+section h2 span {
+    color: #5f6d62;
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.card {
+    margin-top: 14px;
+    padding: 14px 28px;
+    display: grid;
+    grid-template-columns: 290px 1.1fr 0.9fr 0.9fr 0.9fr 200px 130px;
+    align-items: center;
+    column-gap: 16px;
+    background: #fffefa;
+    border: 1.5px solid #dcd9cc;
+    border-radius: 16px 20px 14px 18px;
+    box-shadow: 0 2px 0 #eceae0;
+}
+
+.card:has(.retirado),
+.card:has(.recusado) {
+    background: #fbfaf5;
+    border: 1.5px dashed #c9c5b3;
+    box-shadow: none;
+}
+
+.prod {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.prod img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.prod b {
+    display: block;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-variation-settings: "wdth" 86;
+    font-size: 22px;
+    line-height: 1.1;
+    color: #173b26;
+}
+
+.prod span {
+    color: #5f6d62;
+    font-size: 13px;
+}
+
+.col {
+    color: #5f6d62;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.col b {
+    color: #173b26;
+    font-size: 15px;
+}
+
+.col:nth-of-type(2) {
+    color: #173b26;
+    font-weight: 700;
+}
+
+.col:nth-of-type(2) span {
+    color: #5f6d62;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.col:nth-of-type(3) b {
+    font-family: "Big Shoulders Stencil Display", sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.col:nth-of-type(4),
+.col:nth-of-type(5) {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.col:nth-of-type(4) b,
+.col:nth-of-type(5) b {
+    font-size: 15px;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.badge {
+    justify-self: start;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.aguardando {
+    background: #fbe9bf;
+    color: #9a6400;
+}
+
+.pronto {
+    background: #dcefd9;
+    color: #1f5a2b;
+}
+
+.retirado {
+    background: #ecebe4;
+    color: #4a5a4f;
+}
+
+.recusado {
+    background: #fde0df;
+    color: #b4352a;
+}
+
+.btn-ver {
+    justify-self: end;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+    border: 1.5px solid #173b26;
+    border-radius: 12px 15px 11px 14px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    color: #173b26;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.pronto + .btn-ver {
+    background: #173b26;
+    color: #f8f7f2;
+}
+
+.retirado + .btn-ver,
+.recusado + .btn-ver {
+    padding: 4px 0;
+    border: 0;
+    text-decoration: underline;
+    text-decoration-color: #ff6a14;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+@media (max-width: 1150px) {
+
+    main {
+        padding: 0 32px 80px;
+    }
+
+    
+    .top-row {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 24px;
+    }
+
+    .div-lupa {
+        flex: 1;
+        width: auto;
+    }
+
+    .banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stats {
+        width: 100%;
+        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+    }
+
+    .card {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 14px;
+    }
+
+    
+    .prod {
+        grid-column: 1 / -1;
     }
 }
 
+@media (max-width: 800px) {
 
-/* ---------- O QUE JÁ ESTAVA NESTE ARQUIVO ---------- */
+    main {
+        padding: 0 16px 80px;
+    }
 
-h1{
-    text-align: center;
+    h1 {
+        font-size: 54px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .banner {
+        padding: 24px 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .stat,
+    .stat:first-child {
+        padding: 0;
+        border-left: 0;
+    }
+
+    .stat strong {
+        font-size: 48px;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+    .card {
+        padding: 18px 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-
-/* ---------- CONVERSA COM O MANGUINHA ---------- */
-/* O chat.js monta o botão redondo e a janela. O visual deles fica aqui */
-
-/* Os botões do chat usam a mesma letra da página */
 button {
     font: inherit;
 }
@@ -496,402 +883,3 @@ button {
         animation: none;
     }
 }
-
-.controls {
-    display: right;          
-    align-items: center;
-    width: 550px;    
-    gap: 16px;
-}
-
-.div-lupa {
-display: flex;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-    height: 48px;
-    padding: 0 16px;
-    border: 1.5px solid #d6d3c8;
-    border-radius: 16px;
-    background-color: #ffffff;
-}
-
-.Lupa {
-    color: #173b26;
-    font-size: 18px;
-}
-
-.entrada {
-    flex: 1;                
-    border: none;           
-    outline: none;          
-    background: transparent;
-    font-size: 15px;
-    color: #333333;
-}
-
-
-.seletora {
-    height: 48px;
-    padding: 0 16px 0 56px;
-    width: 240px;
-    border: 1.5px solid #d6d3c8;
-    border-radius: 16px;
-    background-color: #ffffff;
-    font-size: 15px;
-    color: #333333;
-
-    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b3a2a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='18' height='16' rx='2'/><line x1='3' y1='10' x2='21' y2='10'/><line x1='8' y1='3' x2='8' y2='7'/><line x1='16' y1='3' x2='16' y2='7'/></svg>");
-    background-repeat: no-repeat;
-    background-position: 16px center;
-    background-size: 20px;
-    
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
- 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f7f2;
-    color: #444444;
-}
- 
-
-
- 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #173b26;
-    text-decoration: none;
-}
- 
-.logo img {
-    width: 40px;
-}
- 
-.logo span {
-    color: #ff6a14
-}
- 
-nav {
-    display: flex;
-    gap: 8px;
-}
- 
-nav a {
-    padding: 12px 20px;
-    border-radius: 30px;
-    color: #3d5a4a;
-    font-size: 18px;
-    text-decoration: none;
-}
- 
-nav a:hover {
-    background-color: #e6ede1;
-}
- 
-nav a.ativo {
-    background-color: #dfe9d6;
-    color: #1b3a2a;
-}
- 
-.perfil {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
- 
-.perfil img {
-    width: 28px;
-}
- 
-.avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: #fddcc4;
-    color: #1b3a2a;
-    font-weight: bold;
-}
- 
-.perfil b {
-    display: block;
-    color: #1b3a2a;
-}
- 
-.perfil small {
-    color: #777777;
-}
- 
-/* ===== CONTEÚDO PRINCIPAL ===== */
-main {
-    padding: 48px;
-}
- 
-/* título + busca lado a lado */
-.top-row {
-    display: grid;
-    grid-template-columns: 1fr 600px;
-    align-items: end;
-    margin-bottom: 32px;
-}
- 
-.top-row h1 {
-    font-size: 72px;
-    color: #1b3a2a;
-}
- 
-.top-row p {
-    font-size: 20px;
-    color: #555555;
-    margin-top: 16px;
-}
- 
-/* a busca fica na coluna da direita, ocupando as duas linhas */
-.top-row .controls {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    justify-self: end;
-}
- 
-/* ===== PARTE QUE VOCÊ JÁ TINHA ===== */
-.controls {
-    display: flex;          
-    align-items: center;    
-    gap: 16px;
-}
- 
-.div-lupa {
-display: flex;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-    height: 48px;
-    padding: 0 16px;
-    border: 1.5px solid #d6d3c8;
-    border-radius: 16px;
-    background-color: #ffffff;
-}
- 
-.Lupa {
-    color: #1b3a2a;
-    font-size: 18px;
-}
- 
-.entrada {
-    flex: 1;                
-    border: none;           
-    outline: none;          
-    background: transparent;
-    font-size: 15px;
-    color: #333333;
-}
-/* ===== FIM DA PARTE QUE VOCÊ JÁ TINHA ===== */
- 
-.seletora {
-    height: 48px;
-    padding: 0 16px;
-    border: 1.5px solid #d6d3c8;
-    border-radius: 16px;
-    background-color: #ffffff;
-    font-size: 15px;
-    color: #333333;
-}
- 
-/* ===== BANNER VERDE ===== */
-.banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 32px 48px;
-    margin-bottom: 48px;
-    background-color: #1b3a2a;
-    border-radius: 40px;
-}
- 
-.stats {
-    display: flex;
-}
- 
-.stat {
-    padding: 0 48px;
-    border-left: 2px solid #f8f7f3;
-}
- 
-/* o primeiro número não tem linha nem espaço à esquerda */
-.stat:first-child {
-    padding-left: 0;
-    border-left: none;
-}
- 
-.stat small {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 18px;
-    color: #b8c9bc;
-}
- 
-.stat strong {
-    display: block;
-    font-size: 52px;
-    color: #ffffff;
-}
- 
-/* o último número (economia) é laranja */
-.stat:last-child strong {
-    color: #f97316;
-}
- 
-.btn-primary {
-    padding: 16px 28px;
-    border: none;
-    border-radius: 12px;
-    background-color: #f97316;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
- 
-.btn-primary:hover {
-    background-color: #ea6a0a;
-}
- 
-/* ===== SEÇÕES (Em andamento / Concluídos) ===== */
-section h2 {
-    display: inline-block;
-    margin: 0 8px 16px 0;
-    font-size: 36px;
-    color: #1b3a2a;
-}
- 
-section small,
-section h2 span {
-    font-size: 18px;
-    font-weight: bold;
-    color: #777777;
-}
- 
-section {
-    margin-bottom: 40px;
-}
- 
-/* ===== CARDS DOS PEDIDOS ===== */
-.card {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 16px 24px;
-    margin-bottom: 16px;
-    background-color: #ffffff;
-    border: 1px solid #e3e0d5;
-    border-radius: 24px;
-}
- 
-.prod {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    width: 280px;
-}
- 
-.prod img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-}
- 
-.prod b {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 22px;
-    color: #1b3a2a;
-}
- 
-.prod span {
-    font-size: 14px;
-    color: #777777;
-}
- 
-.col {
-    flex: 1;
-    font-size: 15px;
-    color: #777777;
-}
- 
-.col b {
-    font-size: 18px;
-    color: #1b3a2a;
-}
- 
-/* ===== ETIQUETAS DE STATUS ===== */
-.badge {
-    padding: 8px 16px;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: bold;
-    white-space: nowrap;
-}
- 
-.aguardando {
-    background-color: #fdeec4;
-    color: #b45f06;
-}
- 
-.pronto {
-    background-color: #e0f0d6;
-    color: #2f6b1f;
-}
- 
-.retirado {
-    background-color: #ecebe4;
-    color: #555555;
-}
- 
-.recusado {
-    background-color: #fde0df;
-    color: #c0392b;
-}
- 
-/* ===== BOTÕES DOS CARDS ===== */
-.btn-ver {
-    padding: 12px 24px;
-    border: 1.5px solid #1b3a2a;
-    border-radius: 30px;
-    background-color: transparent;
-    color: #1b3a2a;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
- 
-/* "+" pega o botão que vem logo depois da etiqueta */
-.pronto + .btn-ver {
-    background-color: #1b3a2a;
-    color: #ffffff;
-}
- 
-/* nos pedidos concluídos o botão vira um link sublinhado */
-.retirado + .btn-ver,
-.recusado + .btn-ver {
-    border: none;
-    padding: 0 24px;
-    text-decoration: underline;
-}
- 
-
-
-
-

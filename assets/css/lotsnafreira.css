@@ -1,11 +1,7 @@
-/* Letras do Google Fonts. O @import tem que ficar no começo do arquivo */
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800&display=swap");
-
-
-/* ---------- A PÁGINA TODA ---------- */
 
 * {
     box-sizing: border-box;
@@ -19,28 +15,39 @@ body {
     font-family: "Schibsted Grotesk", sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    overflow-x: clip;
 }
 
-/* Títulos com a letra mais estreita */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: .16;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .09  0 0 0 0 .13  0 0 0 0 .08  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
 h1,
 h2,
 h3 {
     font-family: "Bricolage Grotesque", sans-serif;
-    font-variation-settings: "wdth" 86;
+    font-variation-settings: "wdth" 90, "opsz" 28;
     color: #173b26;
     line-height: 1.05;
 }
 
-
-/* ---------- CABEÇALHO ---------- */
-
 header {
+    position: relative;
+    z-index: 5;
     height: 72px;
     padding: 0 48px;
     display: flex;
     align-items: center;
     gap: 40px;
     border-bottom: 1.5px solid #dcd9cc;
+    background: #f8f7f2;
 }
 
 .logo {
@@ -49,14 +56,18 @@ header {
     color: #173b26;
     text-decoration: none;
     font-family: "Bricolage Grotesque", sans-serif;
-    font-variation-settings: "wdth" 82;
+    font-variation-settings: "wdth" 82, "opsz" 36;
     font-weight: 800;
     font-size: 25px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .logo img {
-    width: 40px;
-    margin-right: 7px;
+    width: 44px;
+    height: 44px;
+    margin: -5px 7px -5px 0;
 }
 
 .logo span {
@@ -78,27 +89,43 @@ nav a {
     white-space: nowrap;
 }
 
-/* O link da página em que a pessoa está */
-.ativo {
+nav a:hover {
+    color: #173b26;
+}
+
+.ativo,
+nav .ativo:hover {
     color: #173b26;
     background: #dfe8d3;
 }
 
-/* O sino, a bolinha com as iniciais e o nome vão para o fim da linha */
 .perfil {
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     font-size: 14px;
     line-height: 1.2;
 }
 
 .perfil img {
     width: 26px;
+    margin: 0 8px 0 7px;
+}
+
+.perfil::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin: -4px 0 0 4px;
+    border: solid #4a5a4f;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
 .avatar {
+    flex: none;
+    text-decoration: none;
     width: 40px;
     height: 40px;
     display: flex;
@@ -106,8 +133,9 @@ nav a {
     justify-content: center;
     background: #ffe0c6;
     color: #173b26;
+    font-size: 14px;
     font-weight: 800;
-    border-radius: 50%;
+    border-radius: 58% 42% 55% 45% / 47% 56% 44% 53%;
 }
 
 .perfil b,
@@ -120,21 +148,20 @@ nav a {
     font-size: 12px;
 }
 
-
-/* ---------- TÍTULO E BUSCA ---------- */
-
 .topo {
     padding: 38px 48px 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: flex-end;
-    gap: 20px;
+    gap: 20px 40px;
 }
 
 h1 {
     font-size: 72px;
     font-weight: 800;
+    font-variation-settings: "wdth" 84, "opsz" 48;
+    letter-spacing: -0.018em;
+    line-height: 1;
 }
 
 .topo p {
@@ -144,21 +171,60 @@ h1 {
 }
 
 .busca {
+    margin-left: auto;
     display: flex;
+    align-items: center;
     gap: 12px;
 }
 
-/* Os campos de escrever e de escolher têm todos a mesma cara */
 .campo {
     width: 100%;
     height: 50px;
     padding: 0 15px;
-    background: #fffefa;
+    background-color: #fffefa;
     border: 1.5px solid #c9c5b3;
-    border-radius: 12px 15px 11px 14px;
+    border-radius: 12px 15px 11px 14px / 14px 11px 15px 12px;
     font-family: "Schibsted Grotesk", sans-serif;
     font-size: 16px;
     color: #18261c;
+}
+
+.campo::placeholder {
+    color: #5f6d62;
+}
+
+.campo:focus {
+    outline: none;
+    border-color: #173b26;
+    box-shadow: 0 0 0 4px rgba(255, 106, 20, .28);
+}
+
+.campo[type="search"],
+.campo[type="date"],
+select.campo {
+    padding-left: 44px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 19px;
+}
+
+.campo[type="search"] {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a4f' stroke-width='1.8' stroke-linecap='round'><circle cx='11' cy='11' r='7'/><path d='M16 16l5 5'/></svg>");
+}
+
+.campo[type="date"] {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a4f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><rect x='3.5' y='5' width='17' height='15.5' rx='2'/><path d='M3.5 10h17M8 3v4M16 3v4'/></svg>");
+}
+
+.campo[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+select.campo {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a4f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 5l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 3v16M15 5v16'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a4f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+    background-position: 15px center, right 14px center;
+    background-size: 19px, 17px;
 }
 
 .busca .campo {
@@ -171,10 +237,8 @@ h1 {
 
 .busca select {
     width: 240px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a4f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M4 6h8M4 12h6M4 18h4M17 19V5M13 9l4-4 4 4'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5a4f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
 }
-
-
-/* ---------- FILTROS E LOTES, LADO A LADO ---------- */
 
 .conteudo {
     padding: 36px 48px 72px;
@@ -183,17 +247,19 @@ h1 {
     gap: 46px;
 }
 
-
-/* ---------- FILTROS ---------- */
+.conteudo > * {
+    min-width: 0;
+}
 
 h2 {
     margin-top: 32px;
     margin-bottom: 12px;
     font-size: 20px;
     font-weight: 700;
+    font-variation-settings: "wdth" 90, "opsz" 20;
+    line-height: 1.5;
 }
 
-/* O primeiro título não precisa do espaço em cima */
 h2:first-child {
     margin-top: 0;
 }
@@ -205,16 +271,20 @@ h2:first-child {
 }
 
 .chip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 8px 13px;
     background: #fffefa;
     border: 1.5px solid #c9c5b3;
     border-radius: 999px;
     font-size: 14px;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .chip small {
-    margin-left: 4px;
     color: #5f6d62;
     font-size: 12.5px;
 }
@@ -229,16 +299,115 @@ h2:first-child {
     color: #a9c2ae;
 }
 
-/* A barra de arrastar. O accent-color pinta a barra e as caixinhas de marcar */
+.chip::before {
+    content: "";
+    width: 15px;
+    height: 14px;
+    flex: none;
+    background-color: #ff7a1a;
+    background-image: radial-gradient(circle at 64% 58%, rgba(70, 35, 0, .30) 0 13%, transparent 14%), radial-gradient(circle at 36% 70%, rgba(70, 35, 0, .18) 0 7%, transparent 8%);
+    border-radius: 58% 42% 55% 45% / 47% 56% 44% 53%;
+}
+
+.chip::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 9px);
+    width: 7px;
+    height: 4px;
+    background: #2f6a4a;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(-18deg);
+}
+
+.escolhido::after {
+    background: #8fc27a;
+}
+
+.chip:nth-child(2)::before {
+    background-color: #f3b21b;
+}
+
+.chip:nth-child(3)::before {
+    background-color: #f58d4f;
+}
+
+.chip:nth-child(4)::before {
+    background-color: #e3c93a;
+}
+
+.chip:nth-child(5)::before {
+    background-color: #f0663a;
+}
+
+.chip:nth-child(6)::before {
+    background-color: #e5566f;
+}
+
+.chip:nth-child(7)::before {
+    background-color: #c7262f;
+}
+
+.chip:nth-child(8)::before {
+    background-color: #86b83a;
+}
+
 .distancia {
     width: 100%;
-    margin-top: 18px;
-    accent-color: #173b26;
+    height: 26px;
+    margin-top: 12px;
+    appearance: none;
+    background: transparent;
+}
+
+.distancia::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #173b26 56%, #dcd9cc 56%);
+}
+
+.distancia::-webkit-slider-thumb {
+    appearance: none;
+    width: 26px;
+    height: 25px;
+    margin-top: -9.5px;
+    background: #ff6a14;
+    border: 3px solid #fffefa;
+    border-radius: 58% 42% 55% 45% / 47% 56% 44% 53%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .22);
+}
+
+.distancia::-moz-range-track {
+    height: 6px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #173b26 56%, #dcd9cc 56%);
+}
+
+.distancia::-moz-range-thumb {
+    width: 20px;
+    height: 19px;
+    background: #ff6a14;
+    border: 3px solid #fffefa;
+    border-radius: 58% 42% 55% 45% / 47% 56% 44% 53%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .22);
 }
 
 .legenda {
+    margin-top: 4px;
     font-size: 13px;
     color: #5f6d62;
+    text-align: center;
+}
+
+.legenda::before {
+    content: "0";
+    float: left;
+}
+
+.legenda::after {
+    content: "800 km";
+    float: right;
 }
 
 .legenda b {
@@ -258,6 +427,7 @@ h2:first-child {
 
 .dois-campos .campo {
     margin-top: 7px;
+    padding: 0 12px;
 }
 
 .marcar {
@@ -269,20 +439,30 @@ h2:first-child {
 }
 
 .marcar input {
-    width: 20px;
-    height: 20px;
-    accent-color: #173b26;
+    flex: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: #fffefa center / 15px no-repeat;
+    border: 1.5px solid #c9c5b3;
+    border-radius: 6px 8px 6px 7px;
 }
 
-/* O número vai para o fim da linha */
+.marcar input:checked {
+    background-color: #173b26;
+    border-color: #173b26;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f8f7f2' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12.5l4.5 4.5L19 7.5'/></svg>");
+}
+
+.marcar input:focus-visible {
+    outline: 3px solid #ff6a14;
+}
+
 .marcar small {
     margin-left: auto;
     color: #5f6d62;
     font-size: 13px;
 }
-
-
-/* ---------- FILTROS ESCOLHIDOS ---------- */
 
 .escolhidos {
     margin-bottom: 24px;
@@ -297,16 +477,19 @@ h2:first-child {
     background: #ffe0c6;
     border: 1.5px solid #ff6a14;
     border-radius: 999px;
+    color: #173b26;
     font-size: 13.5px;
     font-weight: 600;
 }
 
 .escolhidos a {
-    margin-left: 10px;
+    padding: 11px 16px;
     color: #173b26;
     font-size: 14px;
+    line-height: 1;
     font-weight: 700;
     text-decoration-color: #ff6a14;
+    text-decoration-thickness: 2px;
     text-underline-offset: 5px;
 }
 
@@ -314,57 +497,57 @@ h2:first-child {
     margin-left: auto;
     color: #4a5a4f;
     font-size: 15px;
+    white-space: nowrap;
 }
 
 .escolhidos b {
     color: #18261c;
 }
 
-
-/* ---------- LOTES ---------- */
-
-/* Três lotes por linha */
 .lotes {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr));
     gap: 28px 22px;
 }
 
-/* O position: relative serve para o desconto se prender neste cartão */
+.lotes a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
 .lote {
     position: relative;
     padding: 8px 8px 18px;
     background: #fffefa;
     border: 1.5px solid #dcd9cc;
-    border-radius: 18px 22px 16px 24px;
+    border-radius: 18px 22px 16px 24px / 20px 16px 22px 18px;
 }
 
-/* A foto enche o espaço sem esticar */
 .lote img {
     display: block;
     width: 100%;
     height: 214px;
     object-fit: cover;
-    border-radius: 14px 20px 12px 22px;
+    border-radius: 14px 20px 12px 22px / 18px 12px 22px 14px;
 }
 
-/* A bolota laranja do desconto, em cima do canto da foto */
 .desconto {
     position: absolute;
     right: 20px;
     top: 180px;
     width: 70px;
     height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     background: #ff6a14;
     color: #173b26;
     font-family: "Big Shoulders Stencil Display", sans-serif;
     font-weight: 800;
     font-size: 26px;
-    border-radius: 58% 42% 55% 45%;
+    border-radius: 58% 42% 55% 45% / 47% 56% 44% 53%;
     transform: rotate(-8deg);
+    box-shadow: 0 8px 14px -8px rgba(120, 50, 0, .55);
 }
 
 .lote-texto {
@@ -372,9 +555,49 @@ h2:first-child {
 }
 
 h3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding-right: 64px;
     font-size: 26px;
     font-weight: 700;
+    font-variation-settings: "wdth" 88, "opsz" 28;
+}
+
+h3::before {
+    content: "";
+    width: 18px;
+    height: 17px;
+    flex: none;
+    background-color: #ff7a1a;
+    background-image: radial-gradient(circle at 64% 58%, rgba(70, 35, 0, .30) 0 13%, transparent 14%), radial-gradient(circle at 36% 70%, rgba(70, 35, 0, .18) 0 7%, transparent 8%);
+    border-radius: 58% 42% 55% 45% / 47% 56% 44% 53%;
+}
+
+h3::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: calc(50% - 11px);
+    width: 8px;
+    height: 4.5px;
+    background: #2f6a4a;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(-18deg);
+}
+
+.lotes a:nth-child(2) h3::before,
+.lotes a:nth-child(6) h3::before {
+    background-color: #f3b21b;
+}
+
+.lotes a:nth-child(3) h3::before {
+    background-color: #f58d4f;
+}
+
+.lotes a:nth-child(4) h3::before {
+    background-color: #e3c93a;
 }
 
 .defeito {
@@ -385,11 +608,26 @@ h3 {
 }
 
 .dado {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-top: 6px;
     font-size: 14.5px;
 }
 
-/* Preço de um lado e prazo do outro, com uma linha tracejada em cima */
+.dado::before {
+    content: "";
+    width: 17px;
+    height: 17px;
+    flex: none;
+    background: #4a5a4f;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linejoin='round'><path d='M12 3v18M7 21h10M4 7h16M4 7l-2.500 7a3.200 3.200 0 0 0 5 0zM20 7l-2.500 7a3.200 3.200 0 0 0 5 0z'/></svg>") center / contain no-repeat;
+}
+
+.dado + .dado::before {
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linejoin='round'><path d='M12 21.5s-7-6.3-7-11.5a7 7 0 0 1 14 0c0 5.200-7 11.500-7 11.500z'/><circle cx='12' cy='10' r='2.500'/></svg>");
+}
+
 .lote-pe {
     margin-top: 16px;
     padding-top: 14px;
@@ -400,6 +638,8 @@ h3 {
 }
 
 .preco {
+    display: flex;
+    align-items: baseline;
     font-family: "Permanent Marker", cursive;
     font-size: 34px;
     line-height: 1;
@@ -407,6 +647,7 @@ h3 {
 }
 
 .preco small {
+    margin-left: 3px;
     font-family: "Schibsted Grotesk", sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -420,6 +661,9 @@ h3 {
 }
 
 .prazo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     padding: 6px 10px;
     background: #fbe9bf;
     color: #9a6400;
@@ -429,7 +673,14 @@ h3 {
     white-space: nowrap;
 }
 
-/* Prazo verde: ainda tem bastante tempo para retirar */
+.prazo::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: currentColor;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 2'/></svg>") center / contain no-repeat;
+}
+
 .com-folga {
     background: #dcefd9;
     color: #2c7a3c;
@@ -441,19 +692,26 @@ h3 {
 }
 
 .mostrar-mais a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     padding: 16px 24px;
     border: 1.5px solid #173b26;
-    border-radius: 12px 15px 11px 14px;
+    border-radius: 12px 15px 11px 14px / 14px 11px 15px 12px;
     color: #173b26;
     font-weight: 700;
+    line-height: 1;
     text-decoration: none;
 }
 
+.mostrar-mais a::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: #173b26;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M5 9l7 7 7-7'/></svg>") center / contain no-repeat;
+}
 
-/* ---------- TELAS MENORES ---------- */
-
-/* Notebook pequeno e tablet: dois lotes por linha */
 @media (max-width: 1150px) {
 
     header,
@@ -468,16 +726,16 @@ h3 {
         gap: 32px;
     }
 
-    .lotes {
-        grid-template-columns: 1fr 1fr;
+    .busca input {
+        width: 360px;
     }
 
-    .busca input {
-        width: 300px;
+    .perfil p,
+    .perfil::after {
+        display: none;
     }
 }
 
-/* Celular: tudo em uma coluna */
 @media (max-width: 800px) {
 
     header,
@@ -487,7 +745,7 @@ h3 {
         padding-right: 16px;
     }
 
-    /* O menu desce para a linha de baixo */
+    
     header {
         height: auto;
         padding-top: 12px;
@@ -502,15 +760,12 @@ h3 {
         padding-bottom: 10px;
     }
 
-    .perfil p {
-        display: none;
-    }
-
     h1 {
         font-size: 54px;
     }
 
     .busca {
+        margin-left: 0;
         width: 100%;
         flex-wrap: wrap;
     }
@@ -522,25 +777,30 @@ h3 {
 
     .conteudo {
         grid-template-columns: 1fr;
-    }
-
-    .lotes {
-        grid-template-columns: 1fr;
+        gap: 26px;
+        padding-top: 20px;
     }
 
     .escolhidos p {
+        order: -1;
         width: 100%;
         margin-left: 0;
     }
 }
 
-
-/* ---------- CONVERSA COM O MANGUINHA ---------- */
-/* O chat.js monta o botão redondo e a janela. O visual deles fica aqui */
-
-/* Os botões do chat usam a mesma letra da página */
 button {
     font: inherit;
+}
+
+@media (max-width: 960px) {
+    header nav {
+        min-width: 0;
+        overflow-x: auto;
+    }
+
+    .perfil p {
+        display: none;
+    }
 }
 
 .mg-botao {

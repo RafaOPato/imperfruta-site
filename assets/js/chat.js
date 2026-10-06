@@ -42,7 +42,7 @@ const SABER = [
     {
         chaves: ["cadastro", "conta", "criar conta", "documento", "cnpj", "cpf", "começar", "comecar"],
         diz: "Pra produtor: nome, CPF ou CNPJ, onde fica o sítio e a chave Pix. Só isso. Pra indústria pedimos CNPJ e os dados de faturamento, porque a nota sai no fechamento do pedido.",
-        botao: { texto: "Criar conta", href: "pages/login.html" }
+        botao: { texto: "Criar conta", href: "pages/cadastro.html" }
     },
     {
         chaves: ["nota fiscal", "nota", "imposto", "fiscal"],

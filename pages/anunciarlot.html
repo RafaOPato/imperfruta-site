@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anunciar lote - ImperFruta</title>
-    <link rel="stylesheet" href="/assets/css/anunciarlot.css">
+    <link rel="stylesheet" href="../assets/css/anunciarlot.css">
+    <link rel="stylesheet" href="../assets/css/acessibilidade.css">
 </head>
 
 <body>
     <header>
-        <a class="logo" href="/index.html">
-            <img src="/assets/images/manga.svg" alt="logo da manguinha">
+        <a class="logo" href="../index.html">
+            <img src="../assets/images/manga.svg" alt="logo da manguinha">
             imper<span>fruta</span>
         </a>
 
@@ -23,8 +24,8 @@
         </nav>
 
         <div class="perfil">
-            <img src="/assets/images/notificacaoanunciolote.png" alt="notificações">
-            <span class="avatar">VS</span>
+            <img src="../assets/images/notificacaoanunciolote.png" alt="notificações">
+            <a class="avatar" href="login.html">VS</a>
             <p>
                 <b>Valdir Souza</b>
                 <small>Sítio Três Irmãs, Bebedouro SP</small>
@@ -37,7 +38,7 @@
     <main class="conteudo-principal">
 
     <div class="inicio">
-        <p>Meus lotesㅤ> ㅤAnunciar lote</p>
+        <p><a href="meusprodutos.html">Meus lotes</a>ㅤ> ㅤAnunciar lote</p>
         <h1>Anunciar lote</h1>
         <p>Foto, fruta, quilos e preço. Quem não quer preencher nada manda foto e áudio pelo WhatsApp que a equipe
             anuncia.</p>
@@ -51,19 +52,19 @@
         </div>
         <div class="pai-imagens">
             <div class="imagem-filho">
-                <img src="/assets/images/fotosanunciolotelaranja.png" alt="muitas laranjas para selecionar">
+                <img src="../assets/images/fotosanunciolotelaranja.png" alt="muitas laranjas para selecionar">
             </div>
 
             <div class="imagem-filho">
-                <img src="/assets/images/fotoanunciolotelaranja2.png" alt="laranjas colhidas">
+                <img src="../assets/images/fotoanunciolotelaranja2.png" alt="laranjas colhidas">
             </div>
 
             <div class="imagem-filho">
-                <img src="/assets/images/fotoanunciolotelaranja3.png" alt="laranjas no pé">
+                <img src="../assets/images/fotoanunciolotelaranja3.png" alt="laranjas no pé">
             </div>
 
             <div class="imagem-filho">
-                <img src="/assets/images/fotoanunciolotetirarfoto.png" alt="adicionar uma foto nova">
+                <img src="../assets/images/fotoanunciolotetirarfoto.png" alt="adicionar uma foto nova">
             </div>
 
         </div>
@@ -73,7 +74,7 @@
         <div class="o-que-e">
             <h2>O que é</h2>
             <div class="chips-fruta">
-                <label class="marcar"><input type="checkbox">Laranja</label>
+                <label class="marcar"><input type="checkbox" checked>Laranja</label>
                 <label class="marcar"><input type="checkbox">Limão</label>
                 <label class="marcar"><input type="checkbox">Manga</label>
                 <label class="marcar"><input type="checkbox">Goiaba</label>
@@ -84,11 +85,11 @@
             <div class="duas-colunas">
                 <div class="campo">
                     <label for="variedade">Variedade</label>
-                    <input class="entrada" type="text" value="Pera rio">
+                    <input class="entrada" id="variedade" type="text" value="Pera rio">
                 </div>
                 <div class="campo">
                     <label for="colheita">Colheita</label>
-                    <input class="entrada" type="date" value="2026-09-12">
+                    <input class="entrada" id="colheita" type="date" value="2026-09-12">
                 </div>
             </div>
         </div>
@@ -133,8 +134,8 @@
             <h2>O que tem de diferente</h2>
             <p>Falar do defeito não espanta comprador: é o que faz o preço fazer sentido para a indústria.</p>
             <div class="chips-clasifc">
-                <label class="marcar"><input type="checkbox">Mancha na casca</label>
-                <label class="marcar"><input type="checkbox">Calibre misto</label>
+                <label class="marcar"><input type="checkbox" checked>Mancha na casca</label>
+                <label class="marcar"><input type="checkbox" checked>Calibre misto</label>
                 <label class="marcar"><input type="checkbox">Formato torto</label>
                 <label class="marcar"><input type="checkbox">Amassado</label>
                 <label class="marcar"><input type="checkbox">Maduro demais</label>
@@ -143,12 +144,12 @@
 
             <div class="duas-colunas">
                  <div class="campo">
-                    <label for="colheita">Dá pra retirar até</label>
-                    <input class="entrada" type="date" value="2026-09-19">
+                    <label for="retirar-ate">Dá pra retirar até</label>
+                    <input class="entrada" id="retirar-ate" type="date" value="2026-09-19">
                     </div>
                 <div class="campo">
-                    <label for="variedade">Carregamento</label>
-                    <input class="entrada" type="text" value="Caminhão entra no pomar">
+                    <label for="carregamento">Carregamento</label>
+                    <input class="entrada" id="carregamento" type="text" value="Caminhão entra no pomar">
                 </div>
             </div>
     </section>
@@ -156,11 +157,11 @@
     </main>
 
     <aside class="resumo">
-        <img src="/assets/images/inicioanunciolote.png" alt="Sinal de visto">
+        <img src="../assets/images/inicioanunciolote.png" alt="Sinal de visto">
         <span class="lado-direito">Rascunho salvo agora</span>
         <div class="meio-direita">
             <span>como vai aparecer na feira</span>
-            <img src="/assets/images/laranjasanunciarlotemeiodireita.png" alt="laranjas pera anunciadas para vender">
+            <img src="../assets/images/laranjasanunciarlotemeiodireita.png" alt="laranjas pera anunciadas para vender">
             <h2>Laranja pera</h2>
             <p>Sítio Três Irmãs · Bebedouro, SP</p>
             <h2>R$ 0,78</h2>
@@ -168,11 +169,13 @@
             <button>Mancha na casca</button> <button>Calibre misto</button>
         </div>
         <div class="meio-direita-botao">
-            <button>Publicar lote</button>
+            <form action="meusprodutos.html">
+                <button>Publicar lote</button>
+            </form>
             <p>Depois de publicado, o lote aparece na feira para as indústrias da região em poucos minutos.</p>
             <section>
                 <div class="whats-foto">
-                    <img src="/assets/images/image.png" alt="Símbolo do whatsapp">
+                    <img src="../assets/images/image.png" alt="Símbolo do whatsapp">
                 </div>
                 <div class="whats-texto">
                     <span>Prefere mandar foto e áudio pelo WhatsApp? <b><u>A gente anuncia pra você</u></b> e te manda o link do lote pronto.</span>
@@ -188,6 +191,7 @@
 
     <script src="../assets/js/chat.js" defer></script>
 
+    <script src="../assets/js/acessibilidade.js" defer></script>
 </body>
 
 </html>

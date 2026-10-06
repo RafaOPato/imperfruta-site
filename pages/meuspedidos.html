@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus pedidos - ImperFruta</title>
-    <link rel="stylesheet" href="/assets/css/meuspedidos.css">
+    <link rel="stylesheet" href="../assets/css/meuspedidos.css">
+    <link rel="stylesheet" href="../assets/css/acessibilidade.css">
 </head>
 
 <body>
@@ -19,12 +20,12 @@
             <a href="lotsnafeira.html">Lotes na feira</a>
             <a class="ativo" href="meuspedidos.html">Meus pedidos</a>
             <a href="#">Alertas</a>
-            <a href="../index.html">Como funciona</a>
+            <a href="../index.html#como-funciona">Como funciona</a>
         </nav>
 
         <div class="perfil">
             <img src="../assets/images/notificacaoanunciolote.png" alt="notificações">
-            <span class="avatar">PR</span>
+            <a class="avatar" href="login.html">PR</a>
             <p>
                 <b>Polpas Rio Pardo</b>
                 <small>Ribeirão Preto, SP</small>
@@ -39,10 +40,10 @@
             <div class="controls">
                 <div class="div-lupa">
                     <span class="Lupa">⌕</span>
-                    <input class="entrada" placeholder="Buscar fruta, lote ou produtor">
+                    <input class="entrada" aria-label="Buscar fruta, lote ou produtor" placeholder="Buscar fruta, lote ou produtor">
                 </div>
 
-                <select class="seletora">
+                <select class="seletora" aria-label="Mês dos pedidos">
     <option>ㅤㅤSetembro de 2026</option>
 </select>
             </div>
@@ -54,14 +55,14 @@
                 <div class="stat"><small>Fruta comprada</small><strong>10.900 kg</strong></div>
                 <div class="stat"><small>Abaixo do preço de mercado</small><strong>R$ 5.750</strong></div>
             </div>
-            <button class="btn-primary">Ver lotes na feira</button>
+            <a class="btn-primary" href="lotsnafeira.html">Ver lotes na feira</a>
         </div>
         <section>
             <h2>Em andamento</h2><small>2 pedidos</small>
 
             <div class="card">
                 <div class="prod">
-                    <img src="/assets/images/laranjapera-meuspedidos .png" alt="">
+                    <img src="../assets/images/laranjapera-meuspedidos .png" alt="">
                     <div>
                         <b>Laranja Pera</b>
                         <span>Pedido 2304, lote 0412</span>
@@ -72,13 +73,13 @@
                 <div class="col">Total<br><b>R$ 2.490,40</b></div>
                 <div class="col">Retirada<br><b>Qui 17/09, 8h</b></div>
                 <span class="badge aguardando">Esperando o produtor</span>
-                <button class="btn-ver">Ver pedido</button>
+                <a class="btn-ver" href="acompanharpedido.html">Ver pedido</a>
             </div>
             </div>
 
             <div class="card">
                 <div class="prod">
-                    <img src="/assets/images/mangatommy-meuspedidos.png" alt="">
+                    <img src="../assets/images/mangatommy-meuspedidos.png" alt="">
                     <div>
                         <b>Manga Tommy</b>
                         <span>Pedido 2291, lote 0398</span>
@@ -89,14 +90,14 @@
                 <div class="col">Total<br><b>R$2332,00</b></div>
                 <div class="col">Retirada<br><b>Qua 16/09, 14h</b></div>
                 <span class="badge pronto">Pronto para Retirar</span>
-                <button class="btn-ver">Ver pedido</button>
+                <a class="btn-ver" href="acompanharpedido.html">Ver pedido</a>
             </div>
 
             <section>
                 <h2>Concluídos <span>últimos 3</span></h2>
                 <div class="card">
                     <div class="prod">
-                        <img src="/assets/images/maracujaazedo-meuspedidos.png" alt="">
+                        <img src="../assets/images/maracujaazedo-meuspedidos.png" alt="">
                         <div>
                             <b>Maracujá Azedo</b>
                             <span>Pedido 2240, lote 0355</span>
@@ -107,12 +108,12 @@
                     <div class="col">Total<br><b>R$2766,60</b></div>
                     <div class="col">Retirado<br><b>09/09</b></div>
                     <span class="badge retirado">Retirado</span>
-                    <button class="btn-ver">Avaliar entrega</button>
+                    <a class="btn-ver" href="acompanharpedido.html">Avaliar entrega</a>
                 </div>
 
                 <div class="card">
                     <div class="prod">
-                        <img src="/assets/images/laranjavalencia-meuspedidos.png" alt="">
+                        <img src="../assets/images/laranjavalencia-meuspedidos.png" alt="">
                         <div>
                             <b>Laranja valência</b>
                             <span>Pedido 2217, lote 0340</span>
@@ -123,12 +124,12 @@
                     <div class="col">Total<br><b>R$3710,00</b></div>
                     <div class="col">Retirado<br><b>05/09</b></div>
                     <span class="badge retirado">Retirado</span>
-                    <button class="btn-ver">Comprar de novo</button>
+                    <a class="btn-ver" href="lotsnafeira.html">Comprar de novo</a>
                 </div>
 
                 <div class="card">
                     <div class="prod">
-                        <img src="/assets/images/caju-meuspedidos.png" alt="">
+                        <img src="../assets/images/caju-meuspedidos.png" alt="">
                         <div>
                             <b>Caju</b>
                             <span>Pedido 2198, lote 0031</span>
@@ -139,10 +140,11 @@
                     <div class="col">Total<br><b>R$788,00</b></div>
                     <div class="col">Produtor Recusou<br><b>03/09</b></div>
                     <span class="badge recusado">Produtor recusou</span>
-                    <button class="btn-ver">Ver o que houve</button>
+                    <a class="btn-ver" href="acompanharpedido.html">Ver o que houve</a>
                 </div>
             </section>
     </main>
     <script src="../assets/js/chat.js" defer></script>
+    <script src="../assets/js/acessibilidade.js" defer></script>
 </body>
 </html>

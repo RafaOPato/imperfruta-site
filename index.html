@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ImperFruta</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/acessibilidade.css">
 </head>
 
 <body>
@@ -13,19 +14,19 @@
         <div class="logo">
             <img src="assets/images/manga.svg" alt="logo da manguinha">
             <a href="index.html">
-                <h1 class="h1">Imper</h1><h1 class="h2">Fruta</h1>
+                <span class="h1">Imper</span><span class="h2">Fruta</span>
             </a>
         </div>
         <nav>
-            <a href="#">Como funciona</a>
-            <a href="#">Para quem planta</a>
-            <a href="#">Para quem processa</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#para-quem-planta">Para quem planta</a>
+            <a href="#para-quem-processa">Para quem processa</a>
             <a href="pages/lotsnafeira.html">Lotes na feira</a>
         </nav>
 
         <div>
-            <a class="btn-entrar" href="/login.html">Entrar</a>
-            <a class="btn-cconta" href="pages/login.html">Criar conta</a>
+            <a class="btn-entrar" href="pages/login.html">Entrar</a>
+            <a class="btn-cconta" href="pages/cadastro.html">Criar conta</a>
         </div>
     </header>
 
@@ -33,7 +34,7 @@
         <h1>A casca tem defeito. A polpa, não.</h1><br>
         <p>Lotes de fruta fora do padrão estético, direto do produtor, para indústrias de suco, polpa, sorvete e doce.
         </p>
-        <a class="btn-cconta" href="pages/login.html">Criar conta</a>
+        <a class="btn-cconta" href="pages/cadastro.html">Criar conta</a>
         <a href="pages/lotsnafeira.html">Lotes na feira</a>
     </section>
 
@@ -81,10 +82,10 @@
         <p>O preço é do produtor. A indústria paga 6% de taxa em cada compra.</p>
     </section>
 
-    <section>
+    <section id="como-funciona">
         <h2>Um lado tem fruta sobrando. O outro precisa de polpa.</h2>
         <div class="pai">
-            <div class="lado-esquerdo">
+            <div class="lado-esquerdo" id="para-quem-planta">
                 <h3>Quem planta</h3>
                 <p>Sítio, fazenda ou cooperativa.</p>
                 <div class="elementos"> <b>Fotografa</b>
@@ -98,10 +99,10 @@
                 </div>
             </div>
             <img class="foto recorte-b foto-meio"
-                src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/CASHEW_FRUIT.jpg/960px-CASHEW_FRUIT.jpg"
+                src="assets/images/fotoindexcaju.jpg"
                 alt="Mãos segurando cajus">
 
-            <div class="lado-direito">
+            <div class="lado-direito" id="para-quem-processa">
                 <h3>Quem processa</h3>
                 <p>Suco, polpam sorvete, doce ou geleia.</p>
                 <div class="elementos"> <b>Filtra</b>
@@ -221,8 +222,8 @@
                 <h2>Tem fruta parada
 no pé?</h2>
                 <p>Produtor anuncia de graça e recebe o valor cheio. A indústria paga 6% de taxa em cada compra.</p>
-                <a href="pages/login.html">Criar conta</a>
-                <a href="wa.me/+551190028922">Falar no WhatsApp</a>
+                <a href="pages/cadastro.html">Criar conta</a>
+                <a href="https://wa.me/551190028922">Falar no WhatsApp</a>
             </div>
 
             <div class="direito-final">
@@ -239,10 +240,10 @@ no pé?</h2>
         <img src="assets/images/manga-selo.svg" alt="logo da manguinha">
         <p>fruta não precisa ser bonita.</p>
         <nav>
-        <a href="#">Como funciona</a>
+        <a href="#como-funciona">Como funciona</a>
         <a href="#">Termos de uso</a>
         <a href="#">Privacidade</a>
-        <a href="#">Sobre</a>
+        <a href="pages/sobre.html">Sobre</a>
         <a href="#">Imprensa</a>
         <a href="#">Ajuda</a>
         <a href="#">Contato</a>
@@ -253,6 +254,7 @@ no pé?</h2>
     
 <script src="assets/js/chat.js" defer></script>
 
+    <script src="assets/js/acessibilidade.js" defer></script>
 </body>
 
 </html>

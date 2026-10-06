@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 16" preserveAspectRatio="none">
+  <filter id="aspero" x="-5%" y="-40%" width="110%" height="180%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="2" result="onda"/>
+    <feDisplacementMap in="SourceGraphic" in2="onda" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <path d="M3 10 C 30 5, 70 4, 117 8" fill="none" stroke="#ff6a14" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" filter="url(#aspero)"/>
+</svg>
