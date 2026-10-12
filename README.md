@@ -236,7 +236,7 @@ O `style.css` é o CSS da página inicial. Cada página de `pages/` tem o CSS co
 - Evellyn Aparecida Queiroz Gomes dos Santos
 - Larissa Vitória Ramos Nascimento
 - Luan Carlos da Silva Arengue
-- Paulo Henrique Dorea Simões
+- Victor Hugo Figueredo Silva
 - Rafael Moisés da Silva Santos
 
 ## Aviso
